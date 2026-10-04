@@ -20,7 +20,7 @@ const W = SPEC.larguraVao;
 const H = SPEC.alturaVao;
 const M = SPEC.alturaMureta;
 const D = SPEC.profundidade;
-const T = 0.15;
+const T = 0.30; // Espessura maciça de alvenaria
 const ALTURA_TOTAL = M + H;
 
 const LARGURA_VIDROS = W - SPEC.larguraVeneziana; // 1.75m
@@ -73,24 +73,25 @@ function notify() {
 
 function computePanelKinematics(index, p) {
   const xFechado = X_ESQ + index * FOLHA_L;
+  const xEmpilhado = X_PIVO + (index * 0.045); // Pacote real de vidros no eixo X
   
   if (index === 0) {
     const tGiro = smooth(clamp(p / 0.25, 0, 1));
-    return { x: X_PIVO, z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
+    return { x: xEmpilhado, z: 0, rotY: -tGiro * (Math.PI / 2) };
   }
   if (index === 1) {
     const tSlide = smooth(clamp((p - 0.20) / (0.45 - 0.20), 0, 1));
     const tGiro = smooth(clamp((p - 0.45) / (0.55 - 0.45), 0, 1));
-    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
+    return { x: THREE.MathUtils.lerp(xFechado, xEmpilhado, tSlide), z: 0, rotY: -tGiro * (Math.PI / 2) };
   }
   if (index === 2) {
     const tSlide = smooth(clamp((p - 0.50) / (0.70 - 0.50), 0, 1));
     const tGiro = smooth(clamp((p - 0.70) / (0.80 - 0.70), 0, 1));
-    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
+    return { x: THREE.MathUtils.lerp(xFechado, xEmpilhado, tSlide), z: 0, rotY: -tGiro * (Math.PI / 2) };
   }
   const tSlide = smooth(clamp((p - 0.75) / (0.90 - 0.75), 0, 1));
   const tGiro = smooth(clamp((p - 0.90) / (1.00 - 0.90), 0, 1));
-  return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
+  return { x: THREE.MathUtils.lerp(xFechado, xEmpilhado, tSlide), z: 0, rotY: -tGiro * (Math.PI / 2) };
 }
 
 function applyProgress() {
@@ -124,81 +125,40 @@ function box(w, h, d, material, x, y, z, { cast = true, receive = true } = {}) {
   return m;
 }
 
-function createSkylineTexture() {
-  const canvas = document.createElement('canvas');
-  canvas.width = 1024;
-  canvas.height = 512;
-  const ctx = canvas.getContext('2d');
-
-  // Gradiente de céu
-  const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  grad.addColorStop(0, '#8ab3d9'); // Azul no topo
-  grad.addColorStop(0.7, '#dcecf8'); // Claro no horizonte
-  grad.addColorStop(1, '#e8f2fa');
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  // Skyline
-  ctx.fillStyle = '#a5b5c4'; // Cinza azulado claro distante
-  const skylineBaseY = canvas.height * 0.8;
-  ctx.beginPath();
-  ctx.moveTo(0, canvas.height);
-  ctx.lineTo(0, skylineBaseY);
-
-  // Gera prédios
-  let x = 0;
-  while (x < canvas.width) {
-    const width = 20 + Math.random() * 40;
-    const height = 10 + Math.random() * 80;
-    ctx.lineTo(x, skylineBaseY - height);
-    ctx.lineTo(x + width, skylineBaseY - height);
-    x += width;
-  }
-
-  ctx.lineTo(canvas.width, skylineBaseY);
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.closePath();
-  ctx.fill();
-
-  const tex = new THREE.CanvasTexture(canvas);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  return tex;
-}
-
 function buildBalcony(scene) {
   const g = new THREE.Group();
 
-  // Piso porcelanato PBR
-  const pisoMat = std(0xf0efe9, { roughness: 0.2, metalness: 0.05 });
-  const floorPlane = new THREE.Mesh(new THREE.PlaneGeometry(W, D + 0.07), pisoMat);
+  // Piso porcelanato PBR (reflexão suave)
+  const pisoMat = std(0xf0efe9, { roughness: 0.15, metalness: 0.1 });
+  const floorPlane = new THREE.Mesh(new THREE.PlaneGeometry(W + T*2, D + 0.5), pisoMat);
   floorPlane.rotation.x = -Math.PI / 2;
-  floorPlane.position.set(0, 0.001, (D - 0.07) / 2);
+  floorPlane.position.set(0, 0.001, D / 2 - 0.25);
   floorPlane.receiveShadow = true;
   g.add(floorPlane);
 
-  // Teto
+  // Teto (Espessura maciça)
   const tetoMat = std(0xfafafa, { roughness: 0.95 });
-  g.add(box(W + 2 * T, 0.1, D + 0.1, tetoMat, 0, ALTURA_TOTAL + 0.05, (D - 0.1) / 2));
+  g.add(box(W + 2 * T, T, D + T, tetoMat, 0, ALTURA_TOTAL + T / 2, (D - T) / 2));
 
-  // Parede grafite (#3d3b40)
+  // Parede grafite frontal (#3d3b40)
   const paredeContornoMat = std(0x3d3b40, { roughness: 0.8 });
   const zContorno = 0; 
-  g.add(box(W, 0.2, T, paredeContornoMat, 0, ALTURA_TOTAL + 0.1, zContorno));
+  g.add(box(W, T, T, paredeContornoMat, 0, ALTURA_TOTAL + T / 2, zContorno));
   g.add(box(T, ALTURA_TOTAL, T, paredeContornoMat, -(W / 2 + T / 2), ALTURA_TOTAL / 2, zContorno));
   g.add(box(T, ALTURA_TOTAL, T, paredeContornoMat, W / 2 + T / 2, ALTURA_TOTAL / 2, zContorno));
 
   // Laterais e mureta (cinza claro #e2dfd9)
   const paredeLateralMat = std(0xe2dfd9, { roughness: 0.9 });
-  const zc = (D - 0.1) / 2;
-  g.add(box(T, ALTURA_TOTAL, D - 0.05, paredeLateralMat, -(W / 2 + T / 2), ALTURA_TOTAL / 2, zc + 0.1));
-  g.add(box(T, ALTURA_TOTAL, D - 0.05, paredeLateralMat, W / 2 + T / 2, ALTURA_TOTAL / 2, zc + 0.1));
+  const zc = D / 2 + T / 2;
+  g.add(box(T, ALTURA_TOTAL, D, paredeLateralMat, -(W / 2 + T / 2), ALTURA_TOTAL / 2, zc));
+  g.add(box(T, ALTURA_TOTAL, D, paredeLateralMat, W / 2 + T / 2, ALTURA_TOTAL / 2, zc));
 
-  // Mureta
-  g.add(box(W, M - 0.03, 0.14, paredeLateralMat, 0, (M - 0.03) / 2, 0));
+  // Mureta inferior
+  g.add(box(W, M - 0.03, T, paredeLateralMat, 0, (M - 0.03) / 2, zContorno));
   
   // Peitoril granito claro PBR
   const peitorilGranito = std(0xd0cec7, { roughness: 0.4, metalness: 0.1 });
-  g.add(box(W, 0.03, 0.18, peitorilGranito, 0, M - 0.015, 0));
+  g.add(box(W, 0.03, T + 0.04, peitorilGranito, 0, M - 0.015, zContorno));
 
   buildKitchenette(g);
   scene.add(g);
@@ -219,7 +179,7 @@ function buildKitchenette(parent) {
   parent.add(box(0.01, 0.02, 0.4, puxadorMat, xC - larg/2 - 0.005, 0.75, zC - 0.2));
   parent.add(box(0.01, 0.02, 0.4, puxadorMat, xC - larg/2 - 0.005, 0.75, zC + 0.2));
 
-  // Bancada Granito PBR
+  // Bancada Granito PBR (sobressaindo da parede)
   const granitoMat = std(0xbbbbbb, { roughness: 0.4, metalness: 0.1 });
   parent.add(box(larg + 0.02, 0.03, prof + 0.02, granitoMat, xC - 0.01, 0.815, zC));
 
@@ -230,10 +190,12 @@ function buildKitchenette(parent) {
   
   const torneira = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.2), inox);
   torneira.position.set(xC + 0.05, 0.93, zCuba);
+  torneira.castShadow = true;
   parent.add(torneira);
   const torneiraBica = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.15), inox);
   torneiraBica.rotation.x = Math.PI / 2;
   torneiraBica.position.set(xC + 0.05, 1.02, zCuba - 0.07);
+  torneiraBica.castShadow = true;
   parent.add(torneiraBica);
 
   // Churrasqueira
@@ -243,9 +205,9 @@ function buildKitchenette(parent) {
   parent.add(box(0.41, 0.2, 0.41, escuro, xC - 0.04, 0.98, zBBQ, { cast: false }));
 
   // Coifa inox mais fina (raio 0.15) e escovada
-  const inoxEscovado = new THREE.MeshPhysicalMaterial({ color: 0xcccccc, metalness: 0.8, roughness: 0.3 });
+  const inoxEscovado = new THREE.MeshPhysicalMaterial({ color: 0xcccccc, metalness: 0.9, roughness: 0.2 });
   const hDuto = ALTURA_TOTAL - 1.28;
-  const duto = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, hDuto, 24), inoxEscovado);
+  const duto = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, hDuto, 32), inoxEscovado);
   duto.position.set(xC - 0.02, 1.28 + hDuto / 2, zBBQ);
   duto.castShadow = true;
   parent.add(duto);
@@ -257,11 +219,15 @@ function buildKitchenette(parent) {
   parent.add(box(0.02, ALTURA_TOTAL - hPrat, 0.02, aramadoMat, xC - 0.2, hPrat + (ALTURA_TOTAL - hPrat)/2, zC - 0.4));
   parent.add(box(0.02, ALTURA_TOTAL - hPrat, 0.02, aramadoMat, xC - 0.2, hPrat + (ALTURA_TOTAL - hPrat)/2, zC - 0.2));
   
-  const vaso = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.1), std(0xddaa88));
+  const vasoMat = std(0xddaa88);
+  const vaso = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.1), vasoMat);
   vaso.position.set(xC - 0.1, hPrat + 0.06, zC - 0.3);
+  vaso.castShadow = true;
   parent.add(vaso);
-  const planta = new THREE.Mesh(new THREE.SphereGeometry(0.06), std(0x558855));
+  const plantaMat = std(0x558855);
+  const planta = new THREE.Mesh(new THREE.SphereGeometry(0.06), plantaMat);
   planta.position.set(xC - 0.1, hPrat + 0.15, zC - 0.3);
+  planta.castShadow = true;
   parent.add(planta);
 }
 
@@ -299,6 +265,7 @@ function buildFixedLouver(scene, aluminio) {
     const aleta = new THREE.Mesh(new THREE.BoxGeometry(louverWidth - 2 * molduraEsp, 0.003, 0.04), aluminio);
     aleta.rotation.x = Math.PI / 5;
     aleta.position.set(0, yAleta, 0);
+    aleta.castShadow = true;
     louverGroup.add(aleta);
   }
 
@@ -306,7 +273,7 @@ function buildFixedLouver(scene, aluminio) {
 }
 
 function buildPanels(scene, aluminio) {
-  // Vidros com transmission 0.98, roughness 0.0
+  // Vidros laminados com transmissão fotorealista
   const vidro = new THREE.MeshPhysicalMaterial({
     color: 0xffffff,
     transmission: 0.98,
@@ -329,11 +296,12 @@ function buildPanels(scene, aluminio) {
     folha.position.set(FOLHA_L / 2, 0, 0);
 
     const pane = new THREE.Mesh(new THREE.BoxGeometry(FOLHA_L - 0.003, hVidro, SPEC.espessuraVidro), vidro);
+    pane.castShadow = true;
     folha.add(pane);
 
-    // Perfis base e topo apenas (SEM AROS VERTICAIS)
-    const perfilTopo = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, FOLHA_A / 2 - SPEC.alturaPerfilVidro / 2, 0, { cast: false });
-    const perfilBase = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, -FOLHA_A / 2 + SPEC.alturaPerfilVidro / 2, 0, { cast: false });
+    // Perfis base e topo apenas
+    const perfilTopo = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, FOLHA_A / 2 - SPEC.alturaPerfilVidro / 2, 0);
+    const perfilBase = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, -FOLHA_A / 2 + SPEC.alturaPerfilVidro / 2, 0);
     folha.add(perfilTopo);
     folha.add(perfilBase);
 
@@ -343,9 +311,18 @@ function buildPanels(scene, aluminio) {
   }
 }
 
+function buildCityBackground(scene) {
+  const bgTex = new THREE.TextureLoader().load('https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2000&auto=format&fit=crop');
+  bgTex.colorSpace = THREE.SRGBColorSpace;
+  const bgMat = new THREE.MeshBasicMaterial({ map: bgTex, side: THREE.BackSide, toneMapped: false });
+  const bgCylinder = new THREE.Mesh(new THREE.CylinderGeometry(20, 20, 15, 64, 1, true, Math.PI * 0.75, Math.PI * 1.5), bgMat);
+  bgCylinder.position.set(0, 1.0, -1.0);
+  scene.add(bgCylinder);
+}
+
 export function init3DScene(container) {
   const scene = new THREE.Scene();
-  scene.background = createSkylineTexture();
+  scene.background = new THREE.Color(0xdcecf8);
   
   const w0 = container.clientWidth || 1280;
   const h0 = container.clientHeight || 720;
@@ -359,7 +336,7 @@ export function init3DScene(container) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(w0, h0);
   
-  // Configurações PBR avançadas
+  // Configurações PBR e Sombras
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
   renderer.shadowMap.enabled = true;
@@ -384,26 +361,27 @@ export function init3DScene(container) {
   controls.maxPolarAngle = Math.PI * 0.65;
   controls.update();
 
-  // Sol projetando sombras
-  const sun = new THREE.DirectionalLight(0xfff8ed, 2.5);
+  // Sol projetando sombras nítidas
+  const sun = new THREE.DirectionalLight(0xfff8ed, 3.5);
   sun.position.set(-4.0, 6.0, -5.0);
   sun.target.position.set(0.5, 0.5, 1.5);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
-  sun.shadow.camera.left = -3;
-  sun.shadow.camera.right = 3;
-  sun.shadow.camera.top = 3;
-  sun.shadow.camera.bottom = -3;
+  sun.shadow.camera.left = -4;
+  sun.shadow.camera.right = 4;
+  sun.shadow.camera.top = 4;
+  sun.shadow.camera.bottom = -4;
   sun.shadow.camera.near = 1;
   sun.shadow.camera.far = 20;
   sun.shadow.bias = -0.0005;
-  sun.shadow.radius = 4;
+  sun.shadow.radius = 2; // Sombra macia mas definida
   scene.add(sun, sun.target);
 
-  const fillLight = new THREE.PointLight(0xfff0da, 0.6, 6, 2);
+  const fillLight = new THREE.PointLight(0xfff0da, 0.8, 8, 2);
   fillLight.position.set(0, 2.0, 1.5);
   scene.add(fillLight);
 
+  buildCityBackground(scene);
   buildBalcony(scene);
   const aluminio = buildRails(scene);
   buildFixedLouver(scene, aluminio);
