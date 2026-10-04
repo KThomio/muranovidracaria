@@ -88,7 +88,7 @@ function buildBalcony(scene) {
   const g = new THREE.Group();
   const tileTex = canvasTexture(512, (ctx, s) => {
     ctx.fillStyle = '#dedbd4'; ctx.fillRect(0, 0, s, s);
-    for (let i = 0; i < 400; i++) { ctx.fillStyle = \gba(\,\,\,0.05)\; ctx.fillRect(Math.random() * s, Math.random() * s, 40 + Math.random() * 60, 40 + Math.random() * 60); }
+    for (let i = 0; i < 400; i++) { ctx.fillStyle = 'rgba(' + Math.floor(150 + Math.random() * 60) + ',' + Math.floor(150 + Math.random() * 60) + ',' + Math.floor(145 + Math.random() * 60) + ',0.05)'; ctx.fillRect(Math.random() * s, Math.random() * s, 40 + Math.random() * 60, 40 + Math.random() * 60); }
     ctx.strokeStyle = '#b9b5ac'; ctx.lineWidth = 5; ctx.strokeRect(0, 0, s, s);
   }, W / 0.6, D / 0.6);
   const piso = std(0xffffff, { map: tileTex, roughness: 0.28, metalness: 0.0, envMapIntensity: 0.6 });
@@ -113,7 +113,7 @@ function buildBarbecue(parent) {
   const tijolo = canvasTexture(256, (ctx, s) => {
     ctx.fillStyle = '#b9ad9f'; ctx.fillRect(0, 0, s, s); const bh = s / 8, bw = s / 4;
     for (let r = 0; r < 8; r++) {
-      for (let c = -1; c < 5; c++) { const x = c * bw + (r % 2 ? bw / 2 : 0); const tone = 150 + Math.random() * 40; ctx.fillStyle = \gb(\,\,\)\; ctx.fillRect(x + 2, r * bh + 2, bw - 4, bh - 4); }
+      for (let c = -1; c < 5; c++) { const x = c * bw + (r % 2 ? bw / 2 : 0); const tone = 150 + Math.random() * 40; ctx.fillStyle = 'rgb(' + (tone + 25) + ',' + (tone - 40) + ',' + (tone - 60) + ')'; ctx.fillRect(x + 2, r * bh + 2, bw - 4, bh - 4); }
     }
   }, 1.1, 2.4);
   const inox = new THREE.MeshStandardMaterial({ color: 0xc9cdd1, metalness: 1, roughness: 0.28, envMapIntensity: 1 });
