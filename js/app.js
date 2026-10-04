@@ -1,4 +1,4 @@
-import { init3DScene, toggleGlazing, setGlazingProgress, onGlazingChange } from './scene3d.js?v=3.0';
+import { init3DScene, toggleGlazing, setGlazingProgress, onGlazingChange } from './render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('canvas-container');
