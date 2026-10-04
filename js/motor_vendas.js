@@ -240,6 +240,20 @@ function buildRails(scene) {
   scene.add(box(W, h, d, aluminio, 0, M + h / 2, 0));
   scene.add(box(W, h, d, aluminio, 0, ALTURA_TOTAL - h / 2, 0));
 
+  // Perfis laterais de arremate ("Perfis em U")
+  const perfilGeo = new THREE.BoxGeometry(0.03, FOLHA_A, 0.05);
+  const perfilMat = new THREE.MeshPhysicalMaterial({ color: 0xF4F4F4, metalness: 0.5, roughness: 0.3 });
+  
+  const perfilEsq = new THREE.Mesh(perfilGeo, perfilMat);
+  perfilEsq.position.set(-W / 2 + 0.015, M + h + FOLHA_A / 2, 0);
+  perfilEsq.castShadow = true;
+  scene.add(perfilEsq);
+  
+  const perfilDir = new THREE.Mesh(perfilGeo, perfilMat);
+  perfilDir.position.set(W / 2 - 0.015, M + h + FOLHA_A / 2, 0);
+  perfilDir.castShadow = true;
+  scene.add(perfilDir);
+
   return aluminio;
 }
 

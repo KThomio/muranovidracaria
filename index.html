@@ -24,10 +24,13 @@
         <h2 class="text-xl font-bold text-murano-navy tracking-tight">Murano <span class="text-murano-cyan">Vidraçaria</span></h2>
     </header>
 
-    <main class="flex-grow w-full max-w-lg md:max-w-3xl lg:max-w-5xl mx-auto px-4 py-8 flex flex-col items-center">
+    <main class="flex-grow w-full max-w-md mx-auto px-4 py-8 flex flex-col items-center">
         
         <!-- Hero Section & Copywriting -->
         <div class="w-full text-center flex flex-col items-center">
+            <!-- Logo CSS Murano -->
+            <div class="flex justify-center mb-4"><div class="w-16 h-16 rounded-full bg-murano-navy flex items-center justify-center border-2 border-murano-cyan shadow-lg"><span class="text-white text-2xl font-serif">M</span><span class="text-murano-cyan text-2xl font-serif -ml-1 mt-2">v</span></div></div>
+            
             <!-- Badge Autoridade -->
             <div class="inline-flex items-center justify-center px-3 py-1.5 bg-sky-50 border border-sky-100 rounded-full mb-4">
                 <span class="text-xs font-bold text-murano-cyan tracking-wide">🏆 Entre as 10 maiores vidraçarias de Sorocaba!</span>
@@ -42,21 +45,23 @@
             </p>
         </div>
 
-        <!-- 3D Canvas Area (Elástico e Limpo) -->
-        <div class="w-full aspect-[4/5] sm:aspect-square md:aspect-video bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 mt-8 relative">
+        <!-- 3D Canvas Area (Mobile-First) -->
+        <div class="w-full h-[450px] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 mt-8 relative flex flex-col justify-end">
+            
+            <!-- Container do Three.js -->
             <div id="canvas-container" class="absolute inset-0 w-full h-full"></div>
-        </div>
-        
-        <!-- Painel de Controles Independente (Ergonomia Mobile) -->
-        <div class="w-full bg-white p-5 md:p-6 rounded-2xl shadow-md border border-slate-100 mt-4 mb-8">
-            <button id="btn-toggle" class="w-full bg-murano-cyan hover:bg-[#009bc2] active:bg-[#0086a8] text-white font-bold py-3.5 px-4 rounded-xl transition-colors shadow-md text-sm mb-4">
-                Abrir / Fechar Envidraçamento
-            </button>
-            <div class="flex justify-between text-xs text-slate-500 mb-2 font-semibold px-1">
-                <span>Abertura</span>
-                <span id="slider-value">0%</span>
+            
+            <!-- Painel de Controles Flutuante -->
+            <div class="relative z-10 w-[92%] mx-auto mb-4 bg-white/95 backdrop-blur-md border border-slate-200 p-4 rounded-xl shadow-xl">
+                <button id="btn-toggle" class="w-full bg-murano-cyan hover:bg-[#009bc2] active:bg-[#0086a8] text-white font-bold py-3.5 px-4 rounded-xl transition-colors shadow-md text-sm mb-4">
+                    Abrir / Fechar Envidraçamento
+                </button>
+                <div class="flex justify-between text-xs text-slate-500 mb-2 font-semibold px-1">
+                    <span>Abertura</span>
+                    <span id="slider-value">0%</span>
+                </div>
+                <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-murano-cyan h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
             </div>
-            <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-murano-cyan h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
         </div>
 
         <!-- Gatilhos de Venda (Lote 1) - Estilo Cartão -->
@@ -85,8 +90,8 @@
             </div>
 
             <!-- CTA WhatsApp -->
-            <a href="https://wa.me/5515991598438?text=Ol%C3%A1%20Caroline%2C%20estou%20na%20assembleia%20da%20Torre%20B%20e%20quero%20garantir%20minha%20vaga%20no%20Lote%201" 
-               target="_blank" 
+            <a href="https://wa.me/5515991598438?text=Ol%C3%A1%20Caroline!%20Sou%20morador%20da%20Torre%20B,%20apartamento%20[%20%20],%20e%20quero%20garantir%20minha%20isen%C3%A7%C3%A3o%20de%20taxa%20no%20Lote%201%20das%20sacadas." 
+               target="_blank" rel="noopener noreferrer"
                class="flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#20bd5a] active:bg-[#1da850] text-white font-bold py-4 rounded-full transition-colors shadow-[0_4px_15px_rgba(37,211,102,0.3)]">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                 Falar com a Caroline e Garantir Vaga
