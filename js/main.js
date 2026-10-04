@@ -1,48 +1,18 @@
-import { createScene } from './scene3d.js';
+﻿import { init3DScene, toggleGlazing, setGlazingProgress, onGlazingChange } from './scene3d.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('canvas-container');
-  const slider = document.getElementById('glazing-slider');
+  if (!container) { console.error('Erro: Container 3D não encontrado.'); return; }
+  try { init3DScene(container); } catch (err) {
+    console.error('Erro ao iniciar o visualizador 3D:', err);
+    container.innerHTML = '<p class="p-6 text-center text-slate-400">Não foi possível carregar o visualizador 3D neste dispositivo.</p>'; return;
+  }
   const btn = document.getElementById('btn-toggle');
-  const label = document.getElementById('slider-value');
-  if (!container) return;
-
-  const scene = createScene(container);
-  let progress = 0;
-  let target = 0;
-  let raf = null;
-
-  const render = () => {
-    scene.setProgress(progress);
-    const pct = Math.round(progress * 100);
-    if (slider) slider.value = String(pct);
-    if (label) label.textContent = pct + '%';
-  };
-
-  const tick = () => {
-    const diff = target - progress;
-    if (Math.abs(diff) < 0.005) {
-      progress = target;
-      raf = null;
-    } else {
-      progress += Math.sign(diff) * Math.min(Math.abs(diff), 0.012);
-      raf = requestAnimationFrame(tick);
-    }
-    render();
-  };
-
-  const animateTo = (t) => {
-    target = t;
-    if (!raf) raf = requestAnimationFrame(tick);
-  };
-
-  btn?.addEventListener('click', () => animateTo(target > 0.5 ? 0 : 1));
-
-  slider?.addEventListener('input', () => {
-    if (raf) { cancelAnimationFrame(raf); raf = null; }
-    progress = target = Number(slider.value) / 100;
-    render();
+  const slider = document.getElementById('glazing-slider');
+  onGlazingChange(({ progress, open }) => {
+    if (btn) btn.textContent = open ? 'Fechar Envidraçamento' : 'Abrir Envidraçamento';
+    if (slider && document.activeElement !== slider) slider.value = progress;
   });
-
-  render();
+  btn?.addEventListener('click', () => toggleGlazing());
+  slider?.addEventListener('input', (e) => setGlazingProgress(e.target.value));
 });
