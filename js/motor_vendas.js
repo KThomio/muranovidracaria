@@ -29,7 +29,6 @@ const FOLHA_A = H - 2 * SPEC.alturaTrilho;
 
 const X_ESQ = -W / 2;
 const X_PIVO = X_ESQ;
-const OFFSET_PILHA_Z = 0.025;
 
 const panels = [];
 let progress = 0;
@@ -74,25 +73,24 @@ function notify() {
 
 function computePanelKinematics(index, p) {
   const xFechado = X_ESQ + index * FOLHA_L;
-  const zPilha = (index + 1) * OFFSET_PILHA_Z;
-
+  
   if (index === 0) {
     const tGiro = smooth(clamp(p / 0.25, 0, 1));
-    return { x: X_PIVO, z: zPilha, rotY: -tGiro * (Math.PI / 2) };
+    return { x: X_PIVO, z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
   }
   if (index === 1) {
     const tSlide = smooth(clamp((p - 0.20) / (0.45 - 0.20), 0, 1));
     const tGiro = smooth(clamp((p - 0.45) / (0.55 - 0.45), 0, 1));
-    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: zPilha, rotY: -tGiro * (Math.PI / 2) };
+    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
   }
   if (index === 2) {
     const tSlide = smooth(clamp((p - 0.50) / (0.70 - 0.50), 0, 1));
     const tGiro = smooth(clamp((p - 0.70) / (0.80 - 0.70), 0, 1));
-    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: zPilha, rotY: -tGiro * (Math.PI / 2) };
+    return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
   }
   const tSlide = smooth(clamp((p - 0.75) / (0.90 - 0.75), 0, 1));
   const tGiro = smooth(clamp((p - 0.90) / (1.00 - 0.90), 0, 1));
-  return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: zPilha, rotY: -tGiro * (Math.PI / 2) };
+  return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: tGiro * (index * 0.03), rotY: -tGiro * (Math.PI / 2) };
 }
 
 function applyProgress() {
@@ -124,6 +122,47 @@ function box(w, h, d, material, x, y, z, { cast = true, receive = true } = {}) {
   m.castShadow = cast;
   m.receiveShadow = receive;
   return m;
+}
+
+function createSkylineTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 1024;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d');
+
+  // Gradiente de céu
+  const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  grad.addColorStop(0, '#8ab3d9'); // Azul no topo
+  grad.addColorStop(0.7, '#dcecf8'); // Claro no horizonte
+  grad.addColorStop(1, '#e8f2fa');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Skyline
+  ctx.fillStyle = '#a5b5c4'; // Cinza azulado claro distante
+  const skylineBaseY = canvas.height * 0.8;
+  ctx.beginPath();
+  ctx.moveTo(0, canvas.height);
+  ctx.lineTo(0, skylineBaseY);
+
+  // Gera prédios
+  let x = 0;
+  while (x < canvas.width) {
+    const width = 20 + Math.random() * 40;
+    const height = 10 + Math.random() * 80;
+    ctx.lineTo(x, skylineBaseY - height);
+    ctx.lineTo(x + width, skylineBaseY - height);
+    x += width;
+  }
+
+  ctx.lineTo(canvas.width, skylineBaseY);
+  ctx.lineTo(canvas.width, canvas.height);
+  ctx.closePath();
+  ctx.fill();
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
 }
 
 function buildBalcony(scene) {
@@ -172,8 +211,8 @@ function buildKitchenette(parent) {
   const xParede = W / 2;
   const xC = xParede - larg / 2;
 
-  // Gabinete
-  const gabMat = std(0xf4f4f4, { roughness: 0.9 });
+  // Gabinete inferior e armários (bloco branco #ffffff)
+  const gabMat = std(0xffffff, { roughness: 0.9 });
   parent.add(box(larg, 0.8, prof, gabMat, xC, 0.4, zC));
   
   const puxadorMat = new THREE.MeshStandardMaterial({ color: 0x888888, metalness: 0.8, roughness: 0.3 });
@@ -184,7 +223,7 @@ function buildKitchenette(parent) {
   const granitoMat = std(0xbbbbbb, { roughness: 0.4, metalness: 0.1 });
   parent.add(box(larg + 0.02, 0.03, prof + 0.02, granitoMat, xC - 0.01, 0.815, zC));
 
-  // Cuba e Inox PBR
+  // Cuba e metais
   const inox = new THREE.MeshPhysicalMaterial({ color: 0xc8cacc, metalness: 1.0, roughness: 0.2, clearcoat: 0.2 });
   const zCuba = zC - 0.3;
   parent.add(box(0.3, 0.01, 0.3, inox, xC - 0.05, 0.825, zCuba, { cast: false }));
@@ -203,9 +242,10 @@ function buildKitchenette(parent) {
   const escuro = std(0x111111, { roughness: 0.8 });
   parent.add(box(0.41, 0.2, 0.41, escuro, xC - 0.04, 0.98, zBBQ, { cast: false }));
 
-  // Coifa inox
+  // Coifa inox mais fina (raio 0.15) e escovada
+  const inoxEscovado = new THREE.MeshPhysicalMaterial({ color: 0xcccccc, metalness: 0.8, roughness: 0.3 });
   const hDuto = ALTURA_TOTAL - 1.28;
-  const duto = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, hDuto, 24), inox);
+  const duto = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, hDuto, 24), inoxEscovado);
   duto.position.set(xC - 0.02, 1.28 + hDuto / 2, zBBQ);
   duto.castShadow = true;
   parent.add(duto);
@@ -266,13 +306,13 @@ function buildFixedLouver(scene, aluminio) {
 }
 
 function buildPanels(scene, aluminio) {
-  // Física dos Vidros - PBR sem shaders manuais
+  // Vidros com transmission 0.98, roughness 0.0
   const vidro = new THREE.MeshPhysicalMaterial({
     color: 0xffffff,
-    transmission: 0.95,
+    transmission: 0.98,
     transparent: true,
     opacity: 1,
-    roughness: 0.02,
+    roughness: 0.0,
     ior: 1.5,
     thickness: 0.02,
     clearcoat: 1.0
@@ -305,7 +345,7 @@ function buildPanels(scene, aluminio) {
 
 export function init3DScene(container) {
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xdcecf8);
+  scene.background = createSkylineTexture();
   
   const w0 = container.clientWidth || 1280;
   const h0 = container.clientHeight || 720;
