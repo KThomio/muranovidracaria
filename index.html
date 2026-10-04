@@ -8,80 +8,86 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: { colors: { murano: { dark: '#0a0f1c', cyan: '#00b4d8' } } }
+                extend: { colors: { murano: { dark: '#0a0f1c', cyan: '#00b4d8', accent: '#0369a1' } } }
             }
         }
     </script>
 </head>
-<body class="bg-murano-dark text-slate-200 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-stone-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
     <!-- Header -->
-    <header class="w-full p-6 flex justify-between items-center border-b border-slate-800">
-        <h2 class="text-2xl font-bold text-white tracking-tight">Murano <span class="text-murano-cyan">Vidraçaria</span></h2>
-        <div class="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-full border border-slate-700 shadow-lg">
-            <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-slate-300">Reunião de Assembleia</span>
+    <header class="w-full p-6 flex justify-between items-center border-b border-slate-200 bg-white">
+        <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Murano <span class="text-sky-700">Vidraçaria</span></h2>
+        <div class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full border border-slate-200 shadow-sm">
+            <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+            <span class="text-sm font-medium text-slate-600">Reunião de Assembleia</span>
         </div>
     </header>
 
     <main class="flex-grow container mx-auto px-4 py-12 max-w-6xl">
         <!-- Hero & Pitch Deck -->
         <div class="text-center mb-10">
-            <span class="text-murano-cyan font-semibold tracking-wider text-sm uppercase">Projeto Oficial de Envidraçamento</span>
-            <h1 class="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">Torre B</h1>
-            <div class="inline-flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg border border-slate-700 text-sm mb-8">
-                <svg class="w-5 h-5 text-murano-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span class="text-sky-700 font-semibold tracking-wider text-sm uppercase">Projeto Oficial de Envidraçamento</span>
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mt-4 mb-6">Torre B</h1>
+            <div class="inline-flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-lg border border-emerald-100 text-emerald-800 font-medium text-sm mb-8">
+                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Aprovado: Norma ABNT NBR 16259/14
             </div>
         </div>
 
         <!-- 3D Canvas Area -->
-        <div class="relative w-full aspect-video min-h-[400px] md:min-h-[600px] bg-slate-900 rounded-2xl shadow-[0_0_50px_rgba(0,180,216,0.15)] overflow-hidden border border-slate-800 mb-8 flex flex-col justify-end">
+        <div class="relative w-full aspect-video min-h-[400px] md:min-h-[600px] bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 mb-12 flex flex-col justify-end">
             <!-- Container do Three.js -->
             <div id="canvas-container" class="absolute inset-0 w-full h-full"></div>
             
             <!-- Painel de Controlo Sobreposto -->
-            <div class="relative z-10 w-full max-w-md mx-auto mb-8 bg-slate-950/80 backdrop-blur-md border border-slate-700 p-6 rounded-xl shadow-2xl">
-                <button id="btn-toggle" class="w-full bg-murano-cyan hover:bg-cyan-500 text-slate-950 font-bold py-3 px-6 rounded-lg transition-colors mb-6 shadow-[0_0_15px_rgba(0,180,216,0.4)]">
+            <div class="relative z-10 w-full max-w-md mx-auto mb-8 bg-white/90 backdrop-blur-md border border-slate-200 p-6 rounded-xl shadow-2xl">
+                <button id="btn-toggle" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 px-6 rounded-lg transition-colors mb-6 shadow-md">
                     Abrir / Fechar Envidraçamento
                 </button>
-                <div class="flex justify-between text-xs text-slate-400 mb-2 font-medium">
+                <div class="flex justify-between text-xs text-slate-500 mb-2 font-medium">
                     <span>Abertura das folhas</span>
                     <span id="slider-value">0%</span>
                 </div>
-                <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-murano-cyan cursor-pointer">
-            </div>
-        </div>
-
-        <!-- Anatomia da Segurança (Objeções) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
-                <h3 class="text-white font-bold mb-2">Vidro Laminado 10mm</h3>
-                <p class="text-slate-400 text-sm">Bloqueio UV, isolamento acústico e tecnologia antivandalismo. Máxima proteção para a sua família.</p>
-            </div>
-            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
-                <h3 class="text-white font-bold mb-2">Perfis RAL 9003B</h3>
-                <p class="text-slate-400 text-sm">Alumínio de alta resistência na cor exata exigida pelo condomínio. Garantia de padronização da fachada.</p>
-            </div>
-            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
-                <h3 class="text-white font-bold mb-2">Sistema Deslizante</h3>
-                <p class="text-slate-400 text-sm">Abertura suave a 90°. Sem impactos estruturais, garantindo a integridade da sua varanda.</p>
+                <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-emerald-600 cursor-pointer">
             </div>
         </div>
 
         <!-- Oferta Lote 1 -->
-        <div class="bg-gradient-to-r from-slate-900 to-slate-800 border border-murano-cyan/30 rounded-2xl p-8 text-center max-w-3xl mx-auto mb-16 shadow-lg shadow-cyan-900/20">
-            <h3 class="text-2xl font-bold text-white mb-4">Vantagem Exclusiva: Lote 1 - Torre B</h3>
-            <p class="text-slate-300 mb-8">Economia de escala: fechando em grupo durante a assembleia, o custo logístico é reduzido. Garanta prioridade na medição e condições flexíveis.</p>
-            <a href="https://wa.me/551533294166?text=Ol%C3%A1%2C%20estou%20na%20assembleia%20da%20Torre%20B%20e%20quero%20garantir%20minha%20vaga%20no%20Lote%201" target="_blank" class="inline-block bg-murano-cyan hover:bg-cyan-500 text-slate-950 font-bold py-4 px-8 rounded-xl transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,180,216,0.3)]">
-                Falar com Consultor e Garantir Vaga no Lote 1
+        <div class="bg-white border-2 border-emerald-600/20 rounded-2xl p-8 text-center max-w-3xl mx-auto mb-16 shadow-2xl shadow-emerald-900/5">
+            <h3 class="text-3xl font-bold text-slate-900 mb-2">Condição Exclusiva de Lançamento: <span class="text-emerald-700">Assembleia Torre B</span></h3>
+            <p class="text-slate-600 mb-8 font-medium">Garanta a sua vaga no Lote 1 de fabricação e tenha acesso aos benefícios imediatos:</p>
+            
+            <div class="flex flex-col items-center gap-4 mb-8 text-left text-slate-700">
+                <div class="flex items-center gap-3 w-full max-w-md bg-stone-50 p-3 rounded-lg border border-slate-100">
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="font-medium">Isenção da Taxa de Deslocamento para os 15 primeiros fechamentos</span>
+                </div>
+                <div class="flex items-center gap-3 w-full max-w-md bg-stone-50 p-3 rounded-lg border border-slate-100">
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="font-medium">Instalação Prioritária garantida (Lote 1)</span>
+                </div>
+                <div class="flex items-center gap-3 w-full max-w-md bg-stone-50 p-3 rounded-lg border border-slate-100">
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span class="font-medium">Padrão Aprovado NBR 16259/14 (Segurança Total)</span>
+                </div>
+            </div>
+
+            <a href="https://wa.me/5515991598438?text=Ol%C3%A1%20Caroline%2C%20estou%20na%20assembleia%20da%20Torre%20B%20e%20quero%20garantir%20minha%20vaga%20no%20Lote%201" target="_blank" class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 shadow-lg w-full max-w-md text-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Garantir Minha Vaga no Lote 1
             </a>
-            <p class="text-xs text-slate-500 mt-4">* Vagas de instalação limitadas à capacidade da equipa no mês.</p>
+            <p class="text-xs text-slate-500 mt-4">* Vagas de instalação limitadas à capacidade da equipa técnica.</p>
         </div>
     </main>
 
-    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-slate-500 text-sm">
-        <p>R. Cervantes, 237 - Vila Assis, Sorocaba - SP | (15) 3329-4166</p>
-        <p class="mt-2">© 2026 Murano Vidraçaria. Todos os direitos reservados.</p>
+    <footer class="bg-white border-t border-slate-200 py-12 text-center text-slate-600 text-sm">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center gap-3">
+            <p class="font-bold text-slate-800 text-lg">Murano Vidraçaria Sorocaba Ltda</p>
+            <p>CNPJ: 64.581.884/0001-72</p>
+            <p>Rua Cervantes, 237 - Vila Assis - Sorocaba/SP, 18025-174</p>
+            <p class="text-emerald-700 font-semibold mt-2">Contato Comercial: Caroline Oliveira | Tel/WhatsApp: (15) 99159-8438</p>
+            <p class="mt-6 text-xs text-slate-400">© 2026 Murano Vidraçaria. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <!-- ImportMap OBRIGATÓRIO para o Three.js -->

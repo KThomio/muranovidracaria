@@ -311,18 +311,10 @@ function buildPanels(scene, aluminio) {
   }
 }
 
-function buildCityBackground(scene) {
-  const bgTex = new THREE.TextureLoader().load('https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2000&auto=format&fit=crop');
-  bgTex.colorSpace = THREE.SRGBColorSpace;
-  const bgMat = new THREE.MeshBasicMaterial({ map: bgTex, side: THREE.BackSide, toneMapped: false });
-  const bgCylinder = new THREE.Mesh(new THREE.CylinderGeometry(20, 20, 15, 64, 1, true, Math.PI * 0.75, Math.PI * 1.5), bgMat);
-  bgCylinder.position.set(0, 1.0, -1.0);
-  scene.add(bgCylinder);
-}
-
 export function init3DScene(container) {
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xdcecf8);
+  scene.background = new THREE.Color(0xe0d6c8);
+  scene.fog = new THREE.Fog(0xe0d6c8, 2, 10);
   
   const w0 = container.clientWidth || 1280;
   const h0 = container.clientHeight || 720;
@@ -361,8 +353,8 @@ export function init3DScene(container) {
   controls.maxPolarAngle = Math.PI * 0.65;
   controls.update();
 
-  // Sol projetando sombras nítidas
-  const sun = new THREE.DirectionalLight(0xfff8ed, 3.5);
+  // Sol quente (Golden Hour)
+  const sun = new THREE.DirectionalLight(0xffe4c4, 1.5);
   sun.position.set(-4.0, 6.0, -5.0);
   sun.target.position.set(0.5, 0.5, 1.5);
   sun.castShadow = true;
@@ -381,7 +373,6 @@ export function init3DScene(container) {
   fillLight.position.set(0, 2.0, 1.5);
   scene.add(fillLight);
 
-  buildCityBackground(scene);
   buildBalcony(scene);
   const aluminio = buildRails(scene);
   buildFixedLouver(scene, aluminio);
