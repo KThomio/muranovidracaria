@@ -24,7 +24,7 @@
         <h2 class="text-xl font-bold text-murano-navy tracking-tight">Murano <span class="text-murano-cyan">Vidraçaria</span></h2>
     </header>
 
-    <main class="flex-grow w-full max-w-md mx-auto px-4 py-8 flex flex-col items-center">
+    <main class="flex-grow w-full max-w-lg md:max-w-3xl lg:max-w-5xl mx-auto px-4 py-8 flex flex-col items-center">
         
         <!-- Hero Section & Copywriting -->
         <div class="w-full text-center flex flex-col items-center">
@@ -42,23 +42,21 @@
             </p>
         </div>
 
-        <!-- 3D Canvas Area (Mobile-First) -->
-        <div class="w-full h-[450px] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 mt-8 relative flex flex-col justify-end">
-            
-            <!-- Container do Three.js -->
+        <!-- 3D Canvas Area (Elástico e Limpo) -->
+        <div class="w-full aspect-[4/5] sm:aspect-square md:aspect-video bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 mt-8 relative">
             <div id="canvas-container" class="absolute inset-0 w-full h-full"></div>
-            
-            <!-- Painel de Controles Flutuante -->
-            <div class="relative z-10 w-[92%] mx-auto mb-4 bg-white/95 backdrop-blur-md border border-slate-200 p-4 rounded-xl shadow-xl">
-                <button id="btn-toggle" class="w-full bg-murano-cyan hover:bg-[#009bc2] active:bg-[#0086a8] text-white font-bold py-3.5 px-4 rounded-xl transition-colors shadow-md text-sm mb-4">
-                    Abrir / Fechar Envidraçamento
-                </button>
-                <div class="flex justify-between text-xs text-slate-500 mb-2 font-semibold px-1">
-                    <span>Abertura</span>
-                    <span id="slider-value">0%</span>
-                </div>
-                <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-murano-cyan h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+        </div>
+        
+        <!-- Painel de Controles Independente (Ergonomia Mobile) -->
+        <div class="w-full bg-white p-5 md:p-6 rounded-2xl shadow-md border border-slate-100 mt-4 mb-8">
+            <button id="btn-toggle" class="w-full bg-murano-cyan hover:bg-[#009bc2] active:bg-[#0086a8] text-white font-bold py-3.5 px-4 rounded-xl transition-colors shadow-md text-sm mb-4">
+                Abrir / Fechar Envidraçamento
+            </button>
+            <div class="flex justify-between text-xs text-slate-500 mb-2 font-semibold px-1">
+                <span>Abertura</span>
+                <span id="slider-value">0%</span>
             </div>
+            <input type="range" id="glazing-slider" min="0" max="1" step="0.01" value="0" class="w-full accent-murano-cyan h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
         </div>
 
         <!-- Gatilhos de Venda (Lote 1) - Estilo Cartão -->
