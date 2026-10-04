@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Torre B - Exclusive Glazing | Murano</title>
+    <title>Torre B - Exclusive Glazing | Murano Vidraçaria</title>
     
-    <!-- Fontes de Alta Relojoaria/Luxo -->
+    <!-- Fontes de Luxo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -16,10 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'luxury-black': '#050505',
-                        'luxury-gold': '#C8A97E',
-                        'luxury-gold-light': '#E6D5B8',
-                        'luxury-gray': '#1A1A1A'
+                        'murano-dark': '#040B14', /* Um navy quase preto, luxuoso */
+                        'murano-cyan': '#00B4D8',
+                        'murano-cyan-light': '#7CE8FF',
+                        'luxury-gray': '#121A23'
                     },
                     fontFamily: {
                         'serif': ['Cinzel', 'serif'],
@@ -33,41 +33,41 @@
         }
     </script>
 </head>
-<body class="bg-luxury-black text-white font-sans antialiased selection:bg-luxury-gold selection:text-black">
+<body class="bg-murano-dark text-white font-sans antialiased selection:bg-murano-cyan selection:text-white">
 
     <!-- Navbar Minimalista -->
-    <nav class="absolute top-0 w-full z-50 py-6 px-6 lg:px-12 flex justify-between items-center border-b border-white/10 bg-gradient-to-b from-black/80 to-transparent">
+    <nav class="absolute top-0 w-full z-50 py-6 px-6 lg:px-12 flex justify-between items-center border-b border-white/5 bg-gradient-to-b from-black/80 to-transparent">
         <div class="flex items-center gap-4">
-            <!-- Logo Murano Redesenhada (Minimalista) -->
+            <!-- Logo Murano Oficial -->
             <div class="flex items-center justify-center">
-                <span class="text-luxury-gold text-3xl font-serif tracking-tighter">M<span class="text-white text-xl">V</span></span>
+                <!-- AVISO: Coloque o arquivo da logo na mesma pasta com o nome 'logo.png' -->
+                <img src="logo.png" alt="Murano Vidraçaria" class="h-10 md:h-12 w-auto object-contain fallback-logo">
             </div>
             <div class="h-6 w-px bg-white/20"></div>
-            <span class="font-sans font-light tracking-[0.3em] uppercase text-xs text-luxury-gold-light">Murano</span>
+            <span class="font-sans font-light tracking-[0.3em] uppercase text-xs text-murano-cyan">Exclusive</span>
         </div>
         <div class="hidden md:flex items-center gap-8">
-            <span class="text-[10px] font-medium tracking-[0.2em] text-white/60 uppercase hover:text-luxury-gold transition-colors cursor-pointer">Top 10 Sorocaba</span>
-            <a href="#reserva" class="text-[10px] font-bold tracking-[0.2em] text-luxury-black bg-luxury-gold px-6 py-2 uppercase hover:bg-luxury-gold-light transition-colors">Reserva Lote 1</a>
+            <span class="text-[10px] font-medium tracking-[0.2em] text-white/60 uppercase hover:text-murano-cyan transition-colors cursor-pointer">Top 10 Sorocaba</span>
+            <a href="#reserva" class="text-[10px] font-bold tracking-[0.2em] text-murano-dark bg-murano-cyan px-6 py-2 uppercase hover:bg-white transition-colors">Reserva Lote 1</a>
         </div>
     </nav>
 
-    <!-- Hero Section (Estilo Relógio de Luxo) -->
-    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-luxury-black bg-silk-texture bg-cover bg-center bg-no-repeat bg-blend-overlay">
-        <!-- Gradiente de escurecimento para garantir leitura -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-0"></div>
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-murano-dark bg-silk-texture bg-cover bg-center bg-no-repeat bg-blend-overlay">
+        <div class="absolute inset-0 bg-gradient-to-r from-murano-dark via-murano-dark/95 to-transparent z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-murano-dark via-transparent to-murano-dark/50 z-0"></div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12">
             
             <!-- Coluna Esquerda: Copywriting -->
             <div class="w-full lg:w-1/2 pt-12 lg:pt-0">
                 <div class="flex items-center gap-4 mb-6">
-                    <div class="h-px w-12 bg-luxury-gold"></div>
-                    <span class="text-luxury-gold font-sans font-medium tracking-[0.3em] text-xs uppercase">The New Collection</span>
+                    <div class="h-px w-12 bg-murano-cyan"></div>
+                    <span class="text-murano-cyan font-sans font-medium tracking-[0.3em] text-xs uppercase">The New Collection</span>
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[1.1] mb-2 uppercase tracking-tight">
-                    Torre <span class="text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold to-luxury-gold-light">B</span>
+                    Torre <span class="text-transparent bg-clip-text bg-gradient-to-r from-murano-cyan to-white">B</span>
                 </h1>
                 <h2 class="text-2xl md:text-3xl font-serif italic text-white/80 mb-8">Exclusive Glazing System</h2>
                 
@@ -76,68 +76,65 @@
                 </p>
                 
                 <a href="#reserva" class="inline-flex items-center gap-4 group">
-                    <span class="text-xs font-bold tracking-[0.2em] uppercase text-white border border-luxury-gold px-8 py-4 rounded-full group-hover:bg-luxury-gold group-hover:text-black transition-all duration-300">
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase text-murano-cyan border border-murano-cyan px-8 py-4 rounded-full group-hover:bg-murano-cyan group-hover:text-murano-dark transition-all duration-300 shadow-[0_0_15px_rgba(0,180,216,0.2)] group-hover:shadow-[0_0_25px_rgba(0,180,216,0.5)]">
                         Descobrir Projeto
                     </span>
                 </a>
             </div>
 
-            <!-- Coluna Direita: O Palco do Vídeo Motion (O "Produto") -->
+            <!-- Coluna Direita: O Palco do Vídeo Motion -->
             <div class="w-full lg:w-1/2 relative mt-10 lg:mt-0">
-                <!-- Efeito de brilho dourado atrás do vídeo -->
-                <div class="absolute inset-0 bg-luxury-gold/20 blur-[100px] rounded-full"></div>
+                <div class="absolute inset-0 bg-murano-cyan/10 blur-[100px] rounded-full"></div>
                 
-                <div id="video-motion-container" class="relative w-full aspect-video bg-luxury-gray rounded-sm border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden group cursor-pointer transform transition-transform duration-700 hover:scale-[1.02]">
+                <div id="video-motion-container" class="relative w-full aspect-video bg-luxury-gray rounded-sm border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group cursor-pointer transform transition-transform duration-700 hover:scale-[1.02]">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop" alt="Render Torre B" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity duration-700">
                     
-                    <!-- Linhas decorativas (Crosshairs) -->
                     <div class="absolute top-0 bottom-0 left-1/2 w-px bg-white/5"></div>
                     <div class="absolute left-0 right-0 top-1/2 h-px bg-white/5"></div>
 
-                    <!-- Botão Play Premium -->
+                    <!-- Botão Play -->
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
-                        <div class="w-20 h-20 rounded-full border border-luxury-gold flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:bg-luxury-gold transition-colors duration-500">
-                            <svg class="w-8 h-8 text-luxury-gold group-hover:text-black ml-1 transition-colors duration-500" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                        <div class="w-20 h-20 rounded-full border border-murano-cyan flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:bg-murano-cyan transition-colors duration-500 shadow-[0_0_20px_rgba(0,180,216,0.3)]">
+                            <svg class="w-8 h-8 text-murano-cyan group-hover:text-murano-dark ml-1 transition-colors duration-500" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
                         </div>
-                        <span class="mt-6 text-[10px] font-sans tracking-[0.3em] uppercase text-luxury-gold">Motion Tour 3D</span>
+                        <span class="mt-6 text-[10px] font-sans tracking-[0.3em] uppercase text-murano-cyan drop-shadow-md">Motion Tour 3D</span>
                     </div>
                 </div>
             </div>
-            
         </div>
     </header>
 
-    <!-- Obras / Confiança (Dark Mode) -->
+    <!-- Obras / Confiança (Focado em Sacadas e Instagram) -->
     <section class="py-32 px-6 lg:px-12 bg-black border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <span class="text-luxury-gold font-sans font-medium tracking-[0.3em] text-xs uppercase block mb-4">Masterpieces</span>
-                    <h2 class="text-4xl md:text-5xl font-serif text-white">Nossas <span class="italic text-luxury-gold-light">Obras</span></h2>
+                    <span class="text-murano-cyan font-sans font-medium tracking-[0.3em] text-xs uppercase block mb-4">Masterpieces</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white">Nossas <span class="italic text-murano-cyan">Obras</span></h2>
                 </div>
-                <a href="https://www.instagram.com/muranovidros2/" target="_blank" class="text-[10px] font-medium tracking-[0.2em] text-white/50 uppercase hover:text-luxury-gold transition-colors flex items-center md:justify-end gap-2">
+                <a href="https://www.instagram.com/muranovidros2/" target="_blank" class="text-[10px] font-medium tracking-[0.2em] text-white/50 uppercase hover:text-murano-cyan transition-colors flex items-center md:justify-end gap-2">
                     Acessar Acervo Instagram <span class="text-lg">→</span>
                 </a>
             </div>
 
+            <!-- GALERIA -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-                <!-- Fotos: Sem bordas, focadas no minimalismo dark -->
                 <div class="group relative aspect-[4/5] overflow-hidden bg-luxury-gray">
-                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd64bd15?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=800&auto=format&fit=crop" alt="Sacada 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
                     <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="text-luxury-gold font-serif italic text-lg">Residência Alpha</p>
+                        <p class="text-murano-cyan font-serif italic text-lg">Envidraçamento Panorâmico</p>
                     </div>
                 </div>
                 <div class="group relative aspect-[4/5] overflow-hidden bg-luxury-gray">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop" alt="Sacada 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
                     <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="text-luxury-gold font-serif italic text-lg">Acabamento Premium</p>
+                        <p class="text-murano-cyan font-serif italic text-lg">Acabamento Premium</p>
                     </div>
                 </div>
                 <div class="group relative aspect-[4/5] overflow-hidden bg-luxury-gray">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Sacada 3" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
                     <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="text-luxury-gold font-serif italic text-lg">Sistema Slide & Turn</p>
+                        <p class="text-murano-cyan font-serif italic text-lg">Sistema Slide & Turn</p>
                     </div>
                 </div>
             </div>
@@ -145,36 +142,36 @@
     </section>
 
     <!-- Oferta Lote 1 (O Convite VIP) -->
-    <section id="reserva" class="py-32 px-6 lg:px-12 bg-luxury-black relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-luxury-gold/5 blur-[150px] rounded-full pointer-events-none"></div>
+    <section id="reserva" class="py-32 px-6 lg:px-12 bg-murano-dark relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-murano-cyan/5 blur-[150px] rounded-full pointer-events-none"></div>
         
         <div class="max-w-4xl mx-auto relative z-10">
-            <div class="border border-luxury-gold/30 bg-luxury-gray/40 backdrop-blur-md p-10 md:p-16 text-center relative">
+            <div class="border border-murano-cyan/30 bg-luxury-gray/40 backdrop-blur-md p-10 md:p-16 text-center relative">
                 <!-- Cantos decorativos de luxo -->
-                <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-luxury-gold"></div>
-                <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-luxury-gold"></div>
-                <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-luxury-gold"></div>
-                <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-luxury-gold"></div>
+                <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-murano-cyan"></div>
+                <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-murano-cyan"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-murano-cyan"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-murano-cyan"></div>
 
-                <span class="text-luxury-gold font-serif italic text-xl mb-4 block">Condição de Lançamento</span>
-                <h3 class="text-3xl md:text-5xl font-serif text-white mb-10 uppercase tracking-widest">Assembleia <span class="text-luxury-gold">Torre B</span></h3>
+                <span class="text-murano-cyan font-serif italic text-xl mb-4 block">Condição de Lançamento</span>
+                <h3 class="text-3xl md:text-5xl font-serif text-white mb-10 uppercase tracking-widest">Assembleia <span class="text-murano-cyan">Torre B</span></h3>
                 
                 <div class="flex flex-col gap-6 text-white/70 font-light text-sm md:text-base max-w-lg mx-auto text-left mb-12 font-sans">
                     <div class="flex items-start gap-4">
-                        <span class="text-luxury-gold mt-1">✦</span>
+                        <span class="text-murano-cyan mt-1">✦</span>
                         <p><strong class="text-white font-medium uppercase tracking-wider text-xs block mb-1">Taxa de Deslocamento Isenta</strong> Garantia exclusiva para os 15 primeiros contratos assinados.</p>
                     </div>
                     <div class="flex items-start gap-4">
-                        <span class="text-luxury-gold mt-1">✦</span>
+                        <span class="text-murano-cyan mt-1">✦</span>
                         <p><strong class="text-white font-medium uppercase tracking-wider text-xs block mb-1">Lote 1 de Produção</strong> Prioridade absoluta na agenda de medição e instalação.</p>
                     </div>
                     <div class="flex items-start gap-4">
-                        <span class="text-luxury-gold mt-1">✦</span>
+                        <span class="text-murano-cyan mt-1">✦</span>
                         <p><strong class="text-white font-medium uppercase tracking-wider text-xs block mb-1">Certificação ABNT NBR 16259/14</strong> Roldanas blindadas e sistema de escoamento premium.</p>
                     </div>
                 </div>
                 
-                <a href="https://wa.me/5515991598438?text=Olá%20Caroline!%20Sou%20morador%20da%20Torre%20B,%20e%20gostaria%20de%20reservar%20minha%20isenção%20de%20taxa%20no%20Lote%201" target="_blank" class="inline-block bg-luxury-gold text-black font-bold tracking-[0.2em] uppercase text-xs px-12 py-5 hover:bg-white transition-colors duration-500">
+                <a href="https://wa.me/5515991598438?text=Olá%20Caroline!%20Sou%20morador%20da%20Torre%20B,%20e%20gostaria%20de%20reservar%20minha%20isenção%20de%20taxa%20no%20Lote%201" target="_blank" class="inline-block bg-murano-cyan text-murano-dark font-bold tracking-[0.2em] uppercase text-xs px-12 py-5 hover:bg-white transition-colors duration-500 shadow-[0_0_20px_rgba(0,180,216,0.4)]">
                     Solicitar Reserva VIP
                 </a>
             </div>
@@ -183,7 +180,9 @@
 
     <!-- Footer VIP -->
     <footer class="bg-black py-12 border-t border-white/5 text-center px-6">
-        <span class="text-luxury-gold text-4xl font-serif tracking-tighter block mb-6">M<span class="text-white text-2xl">V</span></span>
+        <div class="flex items-center justify-center mb-6">
+            <img src="logo.png" alt="Murano Vidraçaria" class="h-8 md:h-10 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+        </div>
         <p class="text-white/40 font-sans text-xs tracking-[0.2em] uppercase mb-2">Murano Vidraçaria Sorocaba Ltda • CNPJ: 64.581.884/0001-72</p>
         <p class="text-white/30 font-sans text-[10px] tracking-widest uppercase">Rua Cervantes, 237 - Vila Assis - Sorocaba/SP, 18025-174</p>
     </footer>
