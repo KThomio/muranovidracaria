@@ -10,7 +10,7 @@ export const SPEC = {
   numFolhas: 4,
   larguraVeneziana: 0.15,
   espessuraVidro: 0.010, // 10mm laminado
-  alturaPerfilVidro: 0.035, // perfil horizontal base/topo
+  alturaPerfilVidro: 0.035,
   alturaTrilho: 0.04,
   profundidadeTrilho: 0.07,
   corPerfil: 0xf4f4f4, // RAL 9003B
@@ -21,7 +21,7 @@ const W = SPEC.larguraVao;
 const H = SPEC.alturaVao;
 const M = SPEC.alturaMureta;
 const D = SPEC.profundidade;
-const T = 0.15; // espessura das paredes
+const T = 0.15;
 const ALTURA_TOTAL = M + H;
 
 const LARGURA_VIDROS = W - SPEC.larguraVeneziana; // 1.75m
@@ -30,7 +30,7 @@ const FOLHA_A = H - 2 * SPEC.alturaTrilho;
 
 const X_ESQ = -W / 2;
 const X_PIVO = X_ESQ;
-const OFFSET_PILHA_Z = 0.025; // 25mm de recuo entre folhas empilhadas
+const OFFSET_PILHA_Z = 0.025;
 
 const panels = [];
 let progress = 0;
@@ -91,7 +91,6 @@ function computePanelKinematics(index, p) {
     const tGiro = smooth(clamp((p - 0.70) / (0.80 - 0.70), 0, 1));
     return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: zPilha, rotY: -tGiro * (Math.PI / 2) };
   }
-  // Folha 3
   const tSlide = smooth(clamp((p - 0.75) / (0.90 - 0.75), 0, 1));
   const tGiro = smooth(clamp((p - 0.90) / (1.00 - 0.90), 0, 1));
   return { x: THREE.MathUtils.lerp(xFechado, X_PIVO, tSlide), z: zPilha, rotY: -tGiro * (Math.PI / 2) };
@@ -117,7 +116,7 @@ function stepTween(now) {
 }
 
 function std(color, opts = {}) {
-  return new THREE.MeshStandardMaterial({ color, roughness: 0.9, envMapIntensity: 0.35, ...opts });
+  return new THREE.MeshStandardMaterial({ color, roughness: 0.9, ...opts });
 }
 
 function box(w, h, d, material, x, y, z, { cast = true, receive = true } = {}) {
@@ -131,8 +130,8 @@ function box(w, h, d, material, x, y, z, { cast = true, receive = true } = {}) {
 function buildBalcony(scene) {
   const g = new THREE.Group();
 
-  // Piso em placas de porcelanato claro acetinado com reflexo suave
-  const pisoMat = std(0xf0efe9, { roughness: 0.2, metalness: 0.05, envMapIntensity: 0.8 });
+  // Piso em placas grandes de porcelanato claro acetinado com reflexo suave
+  const pisoMat = std(0xf0efe9, { roughness: 0.2, metalness: 0.05 });
   const floorPlane = new THREE.Mesh(new THREE.PlaneGeometry(W, D + 0.07), pisoMat);
   floorPlane.rotation.x = -Math.PI / 2;
   floorPlane.position.set(0, 0.001, (D - 0.07) / 2);
@@ -146,20 +145,20 @@ function buildBalcony(scene) {
   // Parede de contorno do vão (grafite escuro)
   const paredeContornoMat = std(0x3d3b40, { roughness: 0.8 });
   const zContorno = 0; 
-  // Acima do vão
   g.add(box(W, 0.2, T, paredeContornoMat, 0, ALTURA_TOTAL + 0.1, zContorno));
-  // Colunas laterais grafite na face interna
   g.add(box(T, ALTURA_TOTAL, T, paredeContornoMat, -(W / 2 + T / 2), ALTURA_TOTAL / 2, zContorno));
   g.add(box(T, ALTURA_TOTAL, T, paredeContornoMat, W / 2 + T / 2, ALTURA_TOTAL / 2, zContorno));
 
-  // Paredes laterais (tom cinzento claro texturado)
+  // Paredes laterais e mureta (tom cinzento claro texturado)
   const paredeLateralMat = std(0xe2dfd9, { roughness: 0.9 });
   const zc = (D - 0.1) / 2;
   g.add(box(T, ALTURA_TOTAL, D - 0.05, paredeLateralMat, -(W / 2 + T / 2), ALTURA_TOTAL / 2, zc + 0.1));
   g.add(box(T, ALTURA_TOTAL, D - 0.05, paredeLateralMat, W / 2 + T / 2, ALTURA_TOTAL / 2, zc + 0.1));
 
-  // Mureta (cinzento claro texturado) com peitoril em granito claro
+  // Mureta
   g.add(box(W, M - 0.03, 0.14, paredeLateralMat, 0, (M - 0.03) / 2, 0));
+  
+  // Peitoril granito claro PBR
   const peitorilGranito = std(0xd0cec7, { roughness: 0.4, metalness: 0.1 });
   g.add(box(W, 0.03, 0.18, peitorilGranito, 0, M - 0.015, 0));
 
@@ -168,7 +167,6 @@ function buildBalcony(scene) {
 }
 
 function buildKitchenette(parent) {
-  // Bancada e Churrasqueira na Parede Direita
   const larg = 0.65;
   const prof = 1.1;
   const zC = 1.4;
@@ -179,20 +177,19 @@ function buildKitchenette(parent) {
   const gabMat = std(0xf4f4f4, { roughness: 0.9 });
   parent.add(box(larg, 0.8, prof, gabMat, xC, 0.4, zC));
   
-  // Puxadores lineares discretos
   const puxadorMat = new THREE.MeshStandardMaterial({ color: 0x888888, metalness: 0.8, roughness: 0.3 });
   parent.add(box(0.01, 0.02, 0.4, puxadorMat, xC - larg/2 - 0.005, 0.75, zC - 0.2));
   parent.add(box(0.01, 0.02, 0.4, puxadorMat, xC - larg/2 - 0.005, 0.75, zC + 0.2));
 
-  // Tampo em granito cinzento claro
-  const granitoMat = std(0xbbbbbb, { roughness: 0.3, metalness: 0.1, envMapIntensity: 0.6 });
+  // Tampo em granito cinzento claro PBR
+  const granitoMat = std(0xbbbbbb, { roughness: 0.4, metalness: 0.1 });
   parent.add(box(larg + 0.02, 0.03, prof + 0.02, granitoMat, xC - 0.01, 0.815, zC));
 
-  // Cuba embutida de inox
-  const inox = new THREE.MeshStandardMaterial({ color: 0xc8cacc, metalness: 0.9, roughness: 0.2, envMapIntensity: 1.2 });
+  // Cuba e metais PBR
+  const inox = new THREE.MeshStandardMaterial({ color: 0xc8cacc, metalness: 1.0, roughness: 0.3, clearcoat: 0.2 });
   const zCuba = zC - 0.3;
   parent.add(box(0.3, 0.01, 0.3, inox, xC - 0.05, 0.825, zCuba, { cast: false }));
-  // Torneira curva inox
+  
   const torneira = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.2), inox);
   torneira.position.set(xC + 0.05, 0.93, zCuba);
   parent.add(torneira);
@@ -201,13 +198,13 @@ function buildKitchenette(parent) {
   torneiraBica.position.set(xC + 0.05, 1.02, zCuba - 0.07);
   parent.add(torneiraBica);
 
-  // Churrasqueira de bancada inox
+  // Churrasqueira
   const zBBQ = zC + 0.25;
   parent.add(box(0.45, 0.3, 0.45, inox, xC - 0.02, 0.98, zBBQ));
   const escuro = std(0x111111, { roughness: 0.8 });
-  parent.add(box(0.41, 0.2, 0.41, escuro, xC - 0.04, 0.98, zBBQ, { cast: false })); // interior
+  parent.add(box(0.41, 0.2, 0.41, escuro, xC - 0.04, 0.98, zBBQ, { cast: false }));
 
-  // Coifa cilíndrica vertical inox até o teto
+  // Coifa cilíndrica vertical inox PBR
   const hDuto = ALTURA_TOTAL - 1.28;
   const duto = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, hDuto, 24), inox);
   duto.position.set(xC - 0.02, 1.28 + hDuto / 2, zBBQ);
@@ -218,11 +215,9 @@ function buildKitchenette(parent) {
   const aramadoMat = std(0xffffff, { metalness: 0.5, roughness: 0.4 });
   const hPrat = 1.6;
   parent.add(box(larg - 0.1, 0.02, 0.3, aramadoMat, xC, hPrat, zC - 0.3));
-  // Suportes aramados
   parent.add(box(0.02, ALTURA_TOTAL - hPrat, 0.02, aramadoMat, xC - 0.2, hPrat + (ALTURA_TOTAL - hPrat)/2, zC - 0.4));
   parent.add(box(0.02, ALTURA_TOTAL - hPrat, 0.02, aramadoMat, xC - 0.2, hPrat + (ALTURA_TOTAL - hPrat)/2, zC - 0.2));
   
-  // Detalhe sutil (vaso pequeno)
   const vaso = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.1), std(0xddaa88));
   vaso.position.set(xC - 0.1, hPrat + 0.06, zC - 0.3);
   parent.add(vaso);
@@ -233,7 +228,7 @@ function buildKitchenette(parent) {
 
 function buildRails(scene) {
   const aluminio = new THREE.MeshPhysicalMaterial({
-    color: SPEC.corPerfil, roughness: 0.35, metalness: 0.25, clearcoat: 0.3, clearcoatRoughness: 0.4, envMapIntensity: 0.8
+    color: SPEC.corPerfil, roughness: 0.4, metalness: 0.3
   });
 
   const { alturaTrilho: h, profundidadeTrilho: d } = SPEC;
@@ -272,9 +267,16 @@ function buildFixedLouver(scene, aluminio) {
 }
 
 function buildPanels(scene, aluminio) {
+  // Vidros PBR Fotorealistas
   const vidro = new THREE.MeshPhysicalMaterial({
-    color: 0xf2f9fd, roughness: 0.08, transmission: 0.94, transparent: true, opacity: 0.92,
-    reflectivity: 0.6, ior: 1.52, thickness: SPEC.espessuraVidro, envMapIntensity: 1.1
+    color: 0xffffff,
+    transmission: 0.95,
+    transparent: true,
+    opacity: 1,
+    roughness: 0.02,
+    ior: 1.52,
+    thickness: 0.01,
+    clearcoat: 1.0
   });
 
   const hVidro = FOLHA_A - 2 * SPEC.alturaPerfilVidro;
@@ -290,7 +292,7 @@ function buildPanels(scene, aluminio) {
     const pane = new THREE.Mesh(new THREE.BoxGeometry(FOLHA_L - 0.003, hVidro, SPEC.espessuraVidro), vidro);
     folha.add(pane);
 
-    // Perfis base e topo apenas
+    // Perfis base e topo apenas (sem montantes verticais)
     const perfilTopo = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, FOLHA_A / 2 - SPEC.alturaPerfilVidro / 2, 0, { cast: false });
     const perfilBase = box(FOLHA_L, SPEC.alturaPerfilVidro, 0.032, aluminio, 0, -FOLHA_A / 2 + SPEC.alturaPerfilVidro / 2, 0, { cast: false });
     folha.add(perfilTopo);
@@ -304,12 +306,11 @@ function buildPanels(scene, aluminio) {
 
 export function init3DScene(container) {
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xdcecf8); // Fundo azul céu suave limpo de shaders
-
+  // Fundo gerado globalmente
+  
   const w0 = container.clientWidth || 1280;
   const h0 = container.clientHeight || 720;
 
-  // Câmera interna a meia altura (1.5m), com visão da bancada (direita) e envidraçamento (esquerda)
   const camera = new THREE.PerspectiveCamera(58, w0 / h0, 0.05, 800);
   const alvo = new THREE.Vector3(0.2, 1.4, 0.4);
   camera.position.set(-0.5, 1.5, 2.0);
@@ -318,15 +319,20 @@ export function init3DScene(container) {
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(w0, h0);
+  
+  // Configurações PBR avançadas no Renderer
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 1.2;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.domElement.style.display = 'block';
   container.appendChild(renderer.domElement);
 
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  // Iluminação Global Realista (HDRI via PMREM)
+  const pmremGenerator = new THREE.PMREMGenerator(renderer);
+  const roomEnv = new RoomEnvironment();
+  scene.environment = pmremGenerator.fromScene(roomEnv, 0.04).texture;
+  scene.background = scene.environment; // O fundo também reflete o env map para maior realismo
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.copy(alvo);
@@ -340,9 +346,7 @@ export function init3DScene(container) {
   controls.maxPolarAngle = Math.PI * 0.65;
   controls.update();
 
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xd0c9bd, 0.8));
-
-  // Sol direcional projetando sombras suaves no piso e bancada
+  // Sol direcional projetando luz natural e sombras nítidas
   const sun = new THREE.DirectionalLight(0xfff8ed, 2.5);
   sun.position.set(-4.0, 6.0, -5.0);
   sun.target.position.set(0.5, 0.5, 1.5);
