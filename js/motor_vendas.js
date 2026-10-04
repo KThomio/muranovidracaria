@@ -185,7 +185,7 @@ function buildKitchenette(parent) {
   parent.add(box(larg + 0.02, 0.03, prof + 0.02, granitoMat, xC - 0.01, 0.815, zC));
 
   // Cuba e Inox PBR
-  const inox = new THREE.MeshStandardMaterial({ color: 0xc8cacc, metalness: 1.0, roughness: 0.2, clearcoat: 0.2 });
+  const inox = new THREE.MeshPhysicalMaterial({ color: 0xc8cacc, metalness: 1.0, roughness: 0.2, clearcoat: 0.2 });
   const zCuba = zC - 0.3;
   parent.add(box(0.3, 0.01, 0.3, inox, xC - 0.05, 0.825, zCuba, { cast: false }));
   
