@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "client_name": "Murano Vidraçaria",
+  "tagline": "Engenharia de Alta Precisão em Envidraçamento de Sacadas",
+  "segment": "Envidraçamento de Sacadas e Varandas Gourmet Premium",
+  "location": "Sorocaba - SP e Região",
+  "core_offer": "Sistema de Envidraçamento sem Rolamentos com Deslizamento Magnético/Polímero de Alta Densidade — Zero Ruído, Zero Desgaste, Garantia Vitalícia no Mecanismo e Certificação ABNT NBR 16259/14.",
+  "target_audience": "Proprietários de apartamentos de médio e alto padrão (ex: Torre B), arquitetos e designers de interiores que buscam acabamento impecável e valorização patrimonial.",
+  "tone_of_voice": "Cinematográfico, Sofisticado, Técnico-Confiável, Exclusivo",
+  "branding": {
+    "colors": {
+      "primary": "#0B132B",
+      "secondary": "#1C2541",
+      "accent": "#00F0FF",
+      "accent_gold": "#E0A96D",
+      "background": "#050811",
+      "surface": "#0E1626",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "text": "#F8FAFC",
+      "text_muted": "#94A3B8"
+    },
+    "typography": {
+      "heading_font": "Space Grotesk, sans-serif",
+      "body_font": "Inter, sans-serif"
+    },
+    "assets": {
+      "logo_url": "assets/images/logo-murano.svg",
+      "hero_video": "assets/videos/preview_animacao.mp4"
+    }
+  },
+  "technical_specs": {
+    "norma": "ABNT NBR 16259/14",
+    "vao": "1930 mm (L) × 1460 mm (A) (Reto / Retangular)",
+    "folhas": "4 folhas móveis",
+    "vidro": "Laminado 10 mm (5+5) incolor com película acústica e proteção UV",
+    "perfil": "Alumínio Liga Estrutural 6063-T6, Branco RAL 9003B / Preto Fosco Anodizado",
+    "mecanismo": "Pivoteamento 90° e recolhimento lateral à esquerda sem roldanas convencionais"
+  },
+  "contact": {
+    "whatsapp": "5515999999999",
+    "whatsapp_message": "Olá! Gostaria de uma consultoria técnica e orçamento para o fechamento de sacada da Murano Vidraçaria.",
+    "instagram": "@muranovidracaria",
+    "google_rating": "4.9/5 estrelas (34 avaliações verificadas)"
+  },
+  "deliverables_active": {
+    "lp": true,
+    "motion": true,
+    "automacao": true
+  }
+}

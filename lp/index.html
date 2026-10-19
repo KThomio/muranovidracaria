@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murano Vidraçaria | Envidraçamento de Sacadas de Alta Precisão</title>
+  <meta name="description" content="Engenharia de precisão em envidraçamento de sacadas. Sistema exclusivo sem roldanas convencionais, vidros laminados 10mm e certificação ABNT NBR 16259/14 em Sorocaba e região.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'murano-black': '#050811',
+            'murano-surface': '#0D1527',
+            'murano-card': '#111B33',
+            'murano-cyan': '#00F0FF',
+            'murano-gold': '#E0A96D',
+            'murano-border': 'rgba(255, 255, 255, 0.08)'
+          },
+          fontFamily: {
+            'heading': ['"Space Grotesk"', 'sans-serif'],
+            'body': ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Space Grotesk + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <style>
+    body {
+      background-color: #050811;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(0, 240, 255, 0.15) 0%, rgba(13, 21, 39, 0) 70%);
+    }
+    .glass-panel {
+      background: rgba(13, 21, 39, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-panel:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 10px 40px -10px rgba(0, 240, 255, 0.1);
+    }
+    .badge-glow {
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+    }
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #FFFFFF 30%, #00F0FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FFF0DB 20%, #E0A96D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+  <!-- Fundo com Glow Dinâmico -->
+  <div class="fixed inset-0 hero-glow pointer-events-none -z-10"></div>
+
+  <!-- Navbar Flutuante Suspensa Awwwards Style -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-5 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-panel px-6 py-3.5 rounded-full">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-heading font-black text-black text-sm shadow-[0_0_15px_rgba(0,240,255,0.4)] group-hover:rotate-6 transition-transform">
+          M
+        </div>
+        <span class="font-heading font-bold text-lg tracking-wider text-white">MURANO <span class="text-murano-cyan text-xs font-mono font-normal">VIDRAÇARIA</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
+        <a href="#diferencial" class="hover:text-murano-cyan transition-colors">Sistema Sem Roldanas</a>
+        <a href="#especificacoes" class="hover:text-murano-cyan transition-colors">Norma ABNT</a>
+        <a href="#comparativo" class="hover:text-murano-cyan transition-colors">Comparativo</a>
+        <a href="#calculadora" class="hover:text-murano-cyan transition-colors">Simulador</a>
+      </nav>
+
+      <a href="https://wa.me/5515999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20envidra%C3%A7amento%20de%20sacada%20da%20Murano%20Vidra%C3%A7aria." target="_blank" rel="noopener noreferrer" class="bg-murano-cyan hover:bg-cyan-400 text-black font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,240,255,0.5)]">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION: Cinematográfica de Alto Impacto -->
+    <section class="min-h-screen pt-36 pb-20 px-6 flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto">
+      
+      <!-- Badge de Engenharia -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel text-xs text-murano-cyan mb-8 border border-cyan-500/30 badge-glow hero-reveal">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="tracking-wide uppercase font-semibold">Tecnologia Patenteada · ABNT NBR 16259/14</span>
+      </div>
+
+      <!-- Título Principal com Impacto -->
+      <h1 class="hero-reveal font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-6 max-w-5xl">
+        A Sacada que Você <br class="hidden sm:inline">
+        <span class="text-gradient-cyan">Nunca Precisará Consertar.</span>
+      </h1>
+
+      <!-- Subtítulo Focado em Dor Real -->
+      <p class="hero-reveal text-slate-300 text-base sm:text-xl max-w-3xl mb-10 font-light leading-relaxed">
+        Eliminamos de vez as roldanas convencionais que travam, oxidam e geram barulho. Conheça a engenharia em vidro laminado 10mm que desliza com a suavidade de um toque.
+      </p>
+
+      <!-- Prova Social Imediata -->
+      <div class="hero-reveal flex flex-wrap justify-center items-center gap-6 mb-12 text-xs sm:text-sm text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="text-amber-400">★★★★★</span>
+          <span class="text-white font-medium">4.9/5 no Google</span>
+          <span class="text-slate-500">(34 avaliações reais)</span>
+        </div>
+        <div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden sm:block"></div>
+        <div class="text-slate-300">
+          <span>Garantia Vitalícia no Mecanismo</span>
+        </div>
+        <div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden sm:block"></div>
+        <div class="text-slate-300">
+          <span>Produção & Instalação Própria</span>
+        </div>
+      </div>
+
+      <!-- CTAs de Conversão -->
+      <div class="hero-reveal flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+        <a href="https://wa.me/5515999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Murano%20e%20quero%20um%20estudo%20t%C3%A9cnico%20para%20minha%20varanda." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-slate-200 transition-all duration-200 text-sm shadow-[0_0_30px_rgba(255,255,255,0.25)] flex items-center justify-center gap-2">
+          <span>Solicitar Estudo Técnico Gratuito</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <a href="#diferencial" class="w-full sm:w-auto glass-panel text-slate-300 font-medium px-8 py-4 rounded-full hover:text-white transition-all duration-200 text-sm">
+          Ver Engenharia em Detalhes
+        </a>
+      </div>
+    </section>
+
+    <!-- SEÇÃO VÍDEO CINEMATOGRÁFICO: O Sistema em Ação -->
+    <section id="diferencial" class="py-24 px-6 border-y border-white/5 relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-murano-gold font-mono uppercase text-xs tracking-widest font-semibold block mb-3">Engenharia Mecânica · Sorocaba/SP</span>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+            Por que o Sistema sem Roldanas é Superior?
+          </h2>
+          <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+            90% dos chamados de manutenção em sacadas ocorrem porque rolamentos de nylon deformam com o peso do vidro. A Murano redesenhou o sistema do zero.
+          </p>
+        </div>
+
+        <!-- Container do Vídeo Render 3D Cinemático -->
+        <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 p-2 sm:p-4 shadow-[0_20px_80px_rgba(0,0,0,0.8)]">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-black flex items-center justify-center">
+            <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="assets/images/WhatsApp Image 2026-10-04 at 13.41.26.jpeg">
+              <source src="../assets/videos/preview_animacao.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Overlay Informativo HUD -->
+            <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10">
+              <div>
+                <div class="flex items-center gap-2 text-xs font-mono text-murano-cyan mb-1">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                  <span>SIMULAÇÃO CINEMATOGRÁFICA 3D</span>
+                </div>
+                <h4 class="text-white font-heading font-semibold text-sm sm:text-base">Articulação Pivotante a 90° em 4 Folhas Móveis</h4>
+                <p class="text-slate-400 text-xs mt-0.5">Vão padrão de 1930mm × 1460mm com vedação hermética contra vento e chuva.</p>
+              </div>
+              <a href="https://wa.me/5515999999999?text=Ol%C3%A1!%20Vi%20a%20demonstra%C3%A7%C3%A3o%20da%20sacada%20e%20gostaria%20de%20saber%20valores." target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white text-xs px-4 py-2 rounded-lg font-medium border border-white/20 transition-colors whitespace-nowrap">
+                Quero esse sistema no meu apartamento
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO GRID MODERNO: As 4 Colunas da Engenharia Murano -->
+    <section id="especificacoes" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-3">Padrão Técnico Rigoroso</span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+          Construído para Durar Gerações
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+          Cada componente foi selecionado para atender e superar os limites da norma brasileira mais exigente do setor vidreiro.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Norma ABNT (Destaque Largo) -->
+        <div class="md:col-span-2 glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/20 transition-all"></div>
+          <span class="text-xs font-mono text-murano-cyan bg-cyan-950/60 border border-cyan-800/60 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">Segurança Máxima</span>
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-3">Certificação ABNT NBR 16259/14</h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Projetado para suportar rajadas de vento de alta pressão com estabilidade milimétrica. Fixação interna com parafusos estruturais inoxidáveis de alta ancoragem na mureta.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-white/5">
+            <div>
+              <div class="text-white font-heading font-bold text-lg">10 mm</div>
+              <div class="text-slate-400 text-xs">Vidro Laminado (5+5)</div>
+            </div>
+            <div>
+              <div class="text-white font-heading font-bold text-lg">Zero</div>
+              <div class="text-slate-400 text-xs">Roldanas Plásticas</div>
+            </div>
+            <div>
+              <div class="text-white font-heading font-bold text-lg">6063-T6</div>
+              <div class="text-slate-400 text-xs">Liga de Alumínio Naval</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Isolamento Acústico -->
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono text-murano-gold bg-amber-950/40 border border-amber-800/40 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">Conforto Térmico & Acústico</span>
+            <h3 class="font-heading text-xl font-bold text-white mb-3">Redução de até 32dB</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              A película acústica PVB integrada entre os vidros filtra o barulho do tráfego urbano e bloqueia 99% dos raios ultravioleta prejudiciais aos seus móveis.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs text-slate-300 font-mono">
+            <span class="text-emerald-400">✓</span> Proteção UV 99.6%
+          </div>
+        </div>
+
+        <!-- Card 3: Estética Invisível -->
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">Design Arquitetônico</span>
+            <h3 class="font-heading text-xl font-bold text-white mb-3">Perfis Ultrafinos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Trilhos discretos com pintura eletrostática microtexturizada (Branco RAL 9003B ou Preto Nobre Anodizado) para harmonia perfeita com a fachada do edifício.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs text-slate-300 font-mono">
+            <span class="text-emerald-400">✓</span> Acabamento Sem Parafusos Aparentes
+          </div>
+        </div>
+
+        <!-- Card 4: Recolhimento Total (Destaque 2 colunas) -->
+        <div class="md:col-span-2 glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <span class="text-xs font-mono text-cyan-400 bg-cyan-950/40 border border-cyan-800/40 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">Espaço 100% Livre</span>
+          <h3 class="font-heading text-2xl font-bold text-white mb-3">Abertura Ampla de 90° com Recolhimento Lateral</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Todas as folhas deslizam e giram para a parede lateral esquerda, liberando 100% do vão da varanda para circulação de ar quando você quiser receber amigos.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-slate-400 font-mono">
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> Fácil de Limpar por Dentro</span>
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> Trava de Segurança Infantil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABELA COMPARATIVA MATADORA: Murano VS Vidraçarias Comuns -->
+    <section id="comparativo" class="py-24 px-6 border-t border-white/5 bg-slate-950/50">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-murano-gold font-mono uppercase text-xs tracking-widest font-semibold block mb-3">Tome uma Decisão Racional</span>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+            O Barato que Sai Caro
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Compare o sistema Murano com o que 95% do mercado entrega aos condomínios:
+          </p>
+        </div>
+
+        <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+          <div class="grid grid-cols-3 p-4 sm:p-6 bg-white/5 border-b border-white/10 font-heading font-semibold text-xs sm:text-base">
+            <div class="text-slate-400">Critério de Engenharia</div>
+            <div class="text-center text-rose-400">Sistemas Tradicionais</div>
+            <div class="text-center text-murano-cyan">Murano Vidraçaria</div>
+          </div>
+
+          <div class="divide-y divide-white/5 text-xs sm:text-sm">
+            <div class="grid grid-cols-3 p-4 sm:p-6 items-center">
+              <div class="text-slate-300 font-medium">Mecanismo de Deslizamento</div>
+              <div class="text-center text-slate-400">Roldanas de nylon (ressecam e quebram)</div>
+              <div class="text-center text-cyan-400 font-semibold">Guias de Polímero de Alta Densidade (sem rolamentos)</div>
+            </div>
+
+            <div class="grid grid-cols-3 p-4 sm:p-6 items-center bg-white/[0.01]">
+              <div class="text-slate-300 font-medium">Ruído e Vibração</div>
+              <div class="text-center text-slate-400">Rangidos constantes com o vento</div>
+              <div class="text-center text-cyan-400 font-semibold">Silencioso (amortecimento de precisão)</div>
+            </div>
+
+            <div class="grid grid-cols-3 p-4 sm:p-6 items-center">
+              <div class="text-slate-300 font-medium">Manutenção Preventiva</div>
+              <div class="text-center text-rose-400 font-medium">Necessária a cada 12 a 18 meses</div>
+              <div class="text-center text-emerald-400 font-bold">Livre de manutenção nas guias</div>
+            </div>
+
+            <div class="grid grid-cols-3 p-4 sm:p-6 items-center bg-white/[0.01]">
+              <div class="text-slate-300 font-medium">Garantia Estrutural</div>
+              <div class="text-center text-slate-400">1 ano padrão de mercado</div>
+              <div class="text-center text-amber-300 font-bold">Garantia Vitalícia no Mecanismo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULADORA / SIMULADOR DE PROJETO INTERATIVO -->
+    <section id="calculadora" class="py-24 px-6 max-w-4xl mx-auto">
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">Simulação Personalizada</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Calcule a Estimativa da sua Sacada</h2>
+          <p class="text-slate-400 text-sm">Selecione as dimensões do seu apartamento para receber uma estimativa direta no seu WhatsApp com nossa equipe técnica.</p>
+        </div>
+
+        <form id="simulador-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Largura aproximada do vão</label>
+              <select id="calc-largura" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                <option value="1.5 a 2.0m (até 4 folhas - Ex: Torre B)">1.5m a 2.0m (4 folhas - Ex: Torre B)</option>
+                <option value="2.1 a 3.5m (5 a 7 folhas)">2.1m a 3.5m (5 a 7 folhas)</option>
+                <option value="3.6 a 5.0m (Sacada Grande / Gourmet)">3.6m a 5.0m (Sacada Grande / Gourmet)</option>
+                <option value="Mais de 5.0m (Personalizado)">Mais de 5.0m (Projeto Especial)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Cor desejada para os perfis</label>
+              <select id="calc-cor" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                <option value="Branco Nobre (RAL 9003B)">Branco Nobre (RAL 9003B)</option>
+                <option value="Preto Fosco Anodizado">Preto Fosco Anodizado</option>
+                <option value="Bronze / Inox Especial">Bronze / Inox Especial</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Seu Condomínio / Edifício em Sorocaba</label>
+            <input type="text" id="calc-condominio" placeholder="Ex: Edifício Torre B, Campolim, etc." class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-400 focus:outline-none">
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-black font-bold py-4 rounded-xl text-sm transition-all duration-200 shadow-[0_0_30px_rgba(0,240,255,0.3)] flex items-center justify-center gap-2">
+            <span>Receber Orçamento e Projeto 3D no WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional Elegante -->
+  <footer class="py-12 px-6 border-t border-white/10 text-center text-xs text-slate-500 font-mono">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="text-slate-400">
+        © 2026 Murano Vidraçaria · Todos os direitos reservados. Sorocaba - SP.
+      </div>
+      <div class="text-slate-500">
+        Conforme norma ABNT NBR 16259/14 · Sistema de Envidraçamento sem Rolamentos.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE ANIMAÇÃO E INTERATIVIDADE (LENIS + GSAP + SIMULADOR) -->
+  <script>
+    // 1. Inicializa Lenis Smooth Scroll com inércia de luxo
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // 2. GSAP Entrada Suave
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.hero-reveal', {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+
+    // 3. Integração do Simulador de WhatsApp
+    document.getElementById('simulador-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const largura = document.getElementById('calc-largura').value;
+      const cor = document.getElementById('calc-cor').value;
+      const condominio = document.getElementById('calc-condominio').value || 'Não informado';
+      
+      const msg = `Olá Murano Vidraçaria! Fiz uma simulação no site para meu apartamento:\n- Vão aproximado: ${largura}\n- Cor do perfil: ${cor}\n- Condomínio/Edifício: ${condominio}\n\nGostaria de receber a estimativa e o projeto 3D!`;
+      
+      const url = `https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

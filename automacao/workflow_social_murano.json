@@ -1,0 +1,70 @@
+{
+  "name": "Murano Vidraçaria - Automação Social Instagram & LinkedIn",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 48
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Agendador Recorrente (A cada 2 dias)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "prompt": "Você é o estrategista de marketing da Murano Vidraçaria (Sorocaba). Crie um post persuasivo para Instagram focado em proprietários de apartamentos que sofrem com barulho de vento ou sacadas emperradas. Destaque: 1) Sistema sem roldanas, 2) Vidros 10mm com norma ABNT NBR 16259/14, 3) Chamada direta para solicitar simulação 3D no link da bio."
+      },
+      "id": "2",
+      "name": "Gerador de Copy Técnica & Persuasiva",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/{{$env.IG_ACCOUNT_ID}}/media",
+        "authentication": "genericCredentialType",
+        "options": {}
+      },
+      "id": "3",
+      "name": "Publicar Post & Reels no Instagram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [720, 300]
+    }
+  ],
+  "connections": {
+    "Agendador Recorrente (A cada 2 dias)": {
+      "main": [
+        [
+          {
+            "node": "Gerador de Copy Técnica & Persuasiva",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gerador de Copy Técnica & Persuasiva": {
+      "main": [
+        [
+          {
+            "node": "Publicar Post & Reels no Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
