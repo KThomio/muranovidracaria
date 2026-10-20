@@ -1,46 +1,101 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "client_name": "Murano Vidraçaria",
-  "tagline": "Engenharia de Alta Precisão em Envidraçamento de Sacadas",
-  "segment": "Envidraçamento de Sacadas e Varandas Gourmet Premium",
-  "location": "Sorocaba - SP e Região",
-  "core_offer": "Sistema de Envidraçamento sem Rolamentos com Deslizamento Magnético/Polímero de Alta Densidade — Zero Ruído, Zero Desgaste, Garantia Vitalícia no Mecanismo e Certificação ABNT NBR 16259/14.",
-  "target_audience": "Proprietários de apartamentos de médio e alto padrão (ex: Torre B), arquitetos e designers de interiores que buscam acabamento impecável e valorização patrimonial.",
-  "tone_of_voice": "Cinematográfico, Sofisticado, Técnico-Confiável, Exclusivo",
+  "legal_name": "Murano Vidraçaria",
+  "cnpj": "64.581.884/0001-72",
+  "tagline": "Especialistas em Envidraçamento de Sacadas e Soluções em Vidro de Alto Padrão",
+  "segment": "Vidraçaria de Alto Padrão (Envidraçamento de Sacadas, Coberturas, Guarda-Corpo, Box, Portas, Janelas e Espelhos)",
+  "location": "R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174",
+  "core_offer": "Envidraçamento de Sacadas e Projetos Sob Medida em Vidro com Produção Própria, Certificação ABNT NBR 16259/14 e Acabamento de Alto Padrão em Sorocaba e Região.",
+  "services": [
+    {
+      "id": "sacadas",
+      "name": "Envidraçamento de Sacadas & Varandas",
+      "highlight": "Carro-chefe · Norma ABNT NBR 16259/14",
+      "description": "Fechamento panorâmico de varandas com abertura total das folhas, vedação hermética e opção de sistema deslize e giro sem rolamentos."
+    },
+    {
+      "id": "coberturas",
+      "name": "Coberturas de Vidro & Pergolados",
+      "highlight": "Proteção UV & Estanqueidade Total",
+      "description": "Coberturas em vidro laminado ou controle solar para garagens, áreas gourmet e pergolados com máxima luminosidade e conforto térmico."
+    },
+    {
+      "id": "guarda-corpo",
+      "name": "Guarda-Corpo & Fechamento de Área Gourmet",
+      "highlight": "Segurança Estrutural & Visão Livre",
+      "description": "Guarda-corpos em vidro laminado/temperado para escadas, mezaninos e terraços, aliados a fechamentos completos de espaços de lazer e spas."
+    },
+    {
+      "id": "box-espelhos",
+      "name": "Box de Alto Padrão, Portas, Janelas & Espelhos",
+      "highlight": "Soluções Completas em Vidraçaria",
+      "description": "Box Elegance e Piso-Teto, portas e janelas em vidro temperado sob medida e espelhos lapidados/bisotados para projetos residenciais e comerciais."
+    }
+  ],
+  "target_audience": "Proprietários de apartamentos e residências em condomínios de Sorocaba e região, arquitetos e engenheiros que buscam execução própria e segurança certificada.",
+  "tone_of_voice": "Sofisticado, Confiável, Técnico, Direto ao Ponto",
   "branding": {
     "colors": {
-      "primary": "#0B132B",
-      "secondary": "#1C2541",
-      "accent": "#00F0FF",
-      "accent_gold": "#E0A96D",
-      "background": "#050811",
-      "surface": "#0E1626",
-      "border": "rgba(255, 255, 255, 0.08)",
+      "primary": "#0C0926",
+      "secondary": "#13103A",
+      "accent": "#2BD9E0",
+      "accent_light": "#E8EAED",
+      "background": "#07051A",
+      "surface": "#100D30",
+      "border": "rgba(43, 217, 224, 0.14)",
       "text": "#F8FAFC",
       "text_muted": "#94A3B8"
     },
     "typography": {
-      "heading_font": "Space Grotesk, sans-serif",
+      "heading_font": "Playfair Display, serif",
+      "display_font": "Space Grotesk, sans-serif",
       "body_font": "Inter, sans-serif"
     },
     "assets": {
-      "logo_url": "assets/images/logo-murano.svg",
-      "hero_video": "assets/videos/preview_animacao.mp4"
+      "logo_url": "assets/images/logo-murano-oficial.png",
+      "hero_video": "assets/videos/preview_animacao.mp4",
+      "portfolio": [
+        {
+          "title": "Envidraçamento Panorâmico de Sacada",
+          "category": "Sacadas & Varandas",
+          "image": "assets/images/obra-envidracamento-sacada.png"
+        },
+        {
+          "title": "Cobertura em Vidro para Pergolado Residencial",
+          "category": "Coberturas de Vidro",
+          "image": "assets/images/obra-cobertura-pergolado.jpg"
+        },
+        {
+          "title": "Guarda-Corpo de Escada & Fechamento de Spa/Gourmet",
+          "category": "Guarda-Corpo & Fechamentos",
+          "image": "assets/images/obra-guarda-corpo-area-gourmet.png"
+        },
+        {
+          "title": "Sacada Condomínio Parque Vida",
+          "category": "Envidraçamento Sob Medida",
+          "image": "assets/images/WhatsApp Image 2026-10-03 at 20.15.37(1).jpeg"
+        }
+      ]
     }
   },
-  "technical_specs": {
+  "motion_showcase_specs": {
+    "context_note": "Especificações exclusivas para a vitrine 3D do sistema Kit Sacada Sem Rolamento (AL Indústria) no Condomínio Parque Vida.",
     "norma": "ABNT NBR 16259/14",
-    "vao": "1930 mm (L) × 1460 mm (A) (Reto / Retangular)",
-    "folhas": "4 folhas móveis",
-    "vidro": "Laminado 10 mm (5+5) incolor com película acústica e proteção UV",
-    "perfil": "Alumínio Liga Estrutural 6063-T6, Branco RAL 9003B / Preto Fosco Anodizado",
-    "mecanismo": "Pivoteamento 90° e recolhimento lateral à esquerda sem roldanas convencionais"
+    "vao": "1900 mm (L) × 860 mm (A)",
+    "veneziana_fixa": "150 mm (lado direito)",
+    "folhas": "4 folhas móveis de 427,75 mm × 660 mm",
+    "vidro": "Laminado 10 mm (5+5) incolor",
+    "mecanismo": "Slide & Turn (Deslize e Giro 90°) com empilhamento à esquerda (distância entre eixos 30 mm)"
   },
   "contact": {
-    "whatsapp": "5515999999999",
-    "whatsapp_message": "Olá! Gostaria de uma consultoria técnica e orçamento para o fechamento de sacada da Murano Vidraçaria.",
-    "instagram": "@muranovidracaria",
-    "google_rating": "4.9/5 estrelas (34 avaliações verificadas)"
+    "whatsapp": "5515991598438",
+    "whatsapp_display": "(15) 99159-8438",
+    "whatsapp_message": "Olá! Vim pelo site da Murano Vidraçaria e gostaria de solicitar um orçamento personalizado.",
+    "instagram": "@muranovidros2",
+    "instagram_url": "https://www.instagram.com/muranovidros2/",
+    "address": "R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174",
+    "google_rating": "4.9/5 estrelas (34 avaliações no Google)"
   },
   "deliverables_active": {
     "lp": true,
@@ -48,3 +103,4 @@
     "automacao": true
   }
 }
+

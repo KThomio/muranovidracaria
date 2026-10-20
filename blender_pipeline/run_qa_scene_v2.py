@@ -40,5 +40,9 @@ def qa():
         print("BLEND_VALIDATION = FAIL")
 
 if __name__ == "__main__":
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    blend_path = os.path.normpath(os.path.join(current_dir, "..", "murano_etapa3_1.blend"))
+    if os.path.exists(blend_path):
+        bpy.ops.wm.open_mainfile(filepath=blend_path)
     qa()
     sys.exit(0)

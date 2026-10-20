@@ -1,43 +1,32 @@
 # 📋 BRIEFING & ESCOPO TÉCNICO: MURANO VIDRAÇARIA 2.0
 
-> Status: `APROVADO PELO DIRETOR`
+> Status: `ALINHADO COM DADOS REAIS & ZERO ALUCINAÇÃO`
 > Data: 19/10/2026
 
 ---
 
-## 1. Visão Geral & Posicionamento
-- **Empresa:** Murano Vidraçaria (Sorocaba/SP).
-- **Posicionamento:** Não vendemos apenas "vidro"; vendemos **Engenharia de Fachada, Conforto Térmico/Acústico e Valorização Imobiliária**.
-- **O Diferencial Matador (Core Offer):** Sistema Exclusivo sem Roldanas Convencionais. Não emperra, não enferruja, não gera ruído de atrito e possui vedação 100% estanque contra vendavais.
-- **Público-Alvo:** Moradores exigentes (Torre B e condomínios de alto padrão) que não querem dor de cabeça com manutenção anual.
+## 1. Dados Oficiais Verificados
+- **Empresa:** Murano Vidraçaria
+- **CNPJ:** `64.581.884/0001-72`
+- **Endereço:** R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174
+- **WhatsApp:** `(15) 99159-8438`
+- **Instagram:** `@muranovidros2` (`https://www.instagram.com/muranovidros2/`)
+- **Reputação Google:** 4.9/5 estrelas (34 avaliações verificadas)
 
 ---
 
-## 2. Entregáveis Contratados (Pacote Completo 2.0)
-
-### 🌟 Entregável 1: Landing Page Criativa Awwwards (`/lp`)
-- **Estética:** Dark Mode Ultra-Premium (Fundo Noturno Profundo `#050811`, Acentos Ciano Elétrico `#00F0FF` e Dourado Champagne `#E0A96D`).
-- **Efeitos Dinâmicos:**
-  - Rolagem fluida com física suave (Lenis Smooth Scroll).
-  - Revelação de tipografia com GSAP ScrollTrigger.
-  - Bento Grid Interativo com especificações da NBR 16259/14.
-  - Comparador Visual: *Sistema Murano (Sem Roldanas)* VS *Sistemas Comuns (Roldanas frágeis)*.
-  - Seletor Interativo de Estimativa de Projeto com redirecionamento direto para WhatsApp com mensagem personalizada.
-
-### 🎬 Entregável 2: Motion Studio Ultrarrealista (`/motion`)
-- **Fidelidade Técnica Rigorosa:**
-  - Vão exato: 1930 mm (largura) × 1460 mm (altura).
-  - Exatamente 4 folhas móveis de vidro laminado 10mm com recolhimento articulado à esquerda.
-  - Iluminação física de estúdio cinematográfico (Key light difusa, Rim light azulada realçando o bisel do vidro).
-  - Vídeo de Reels 9:16 tipográfico em Remotion para campanhas de Instagram Ads.
-
-### 🤖 Entregável 3: Automação de Postagens para Redes Sociais (`/automacao`)
-- Workflow n8n exportável pronto para agendar publicações técnicas e comerciais.
-- Roteiros automáticos com foco em tirar dúvidas de condomínios sobre a norma ABNT e garantia.
+## 2. Posicionamento Comercial (Foco em Vidraçaria)
+- **Carro-Chefe:** Envidraçamento de Sacadas e Varandas Gourmet (Norma ABNT NBR 16259/14).
+- **Portfólio Completo em Vidro (Sem foco em esquadrias de alumínio):**
+  1. Envidraçamento de Sacadas e Varandas
+  2. Coberturas de Vidro e Pergolados
+  3. Guarda-Corpos de Escada/Sacada e Fechamentos de Área Gourmet/Spa
+  4. Box de Banheiro Sob Medida (Elegance, Piso-Teto, Canto/Frontal)
+  5. Portas e Janelas em Vidro Temperado
+  6. Espelhos Sob Medida (Lapidados, Bisotados e com LED)
 
 ---
 
-## 3. Especificações Técnicas de Engenharia (Invioláveis)
-- **Norma Regulamentadora:** ABNT NBR 16259/14 (Envidraçamento de Sacadas).
-- **Estrutura:** Perfis em Alumínio 6063-T6 estrutural com pintura eletrostática ou anodização.
-- **Vidros:** Laminados de 10mm (5+5 com película acústica anti-UV).
+## 3. Diretriz do Motion 3D vs Site
+- O sistema **Kit Sacada Sem Rolamento (AL Indústria)** é uma opção técnica demonstrada especificamente na seção de **Scrollytelling 3D (`#tecnologia`)**, não sendo tratado como regra absoluta para todos os serviços da vidraçaria.
+
