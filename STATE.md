@@ -1,24 +1,17 @@
 # 📌 ESTADO ATUAL DO PROJETO: MURANO VIDRAÇARIA
 > [!IMPORTANT]
-> **ESCUDO ANTI-TOKEN ATIVO:** Manter este arquivo sempre com menos de 40 linhas.
+> **ESCUDO ANTI-TOKEN (HEADROOM) ATIVO:** Manter este arquivo sempre com menos de 40 linhas.
 
 ## 1. Identificação
-- **Cliente:** Murano Vidraçaria (`Murano Vidraçaria Sorocaba Ltda` · CNPJ `64.581.884/0001-72`)
-- **Fase Atual:** V3 Concluída — Design Taste Frontend + HyperFrames Studio + Blindagem LGPD/Security/SEO/GEO + Vercel Ativa
+- **Cliente:** Murano Vidraçaria (`Murano Vidraçaria Sorocaba Ltda` · CNPJ `64.581.884/0001-72` · `(15) 99159-8438`)
+- **Fase Atual:** V4 Quiet Luxury no Ar (Mobile-First, Despoluído, 100% Fotos Reais + Simulador de Abertura + GSAP Flip)
 
 ## 2. O que já foi concluído ✅
-- [x] Design Taste Frontend: Textura SVG Film Grain (0.028), bordas 1px, crosshairs CAD (+) e índices suíços [01-05]
-- [x] HyperFrames Interactive Studio: Comparador Before/After touch/drag + 4 Hotspots técnicos CAD clicáveis
-- [x] Modo Vídeo 3D Scrollytelling 240 frames com play/pause manual integrado
-- [x] Blindagem de Segurança Web: `vercel.json` com headers HSTS, CSP, X-Frame-Options: DENY e anti-XSS
-- [x] Dominância GEO & Motores IA: `/llms.txt` criado para ChatGPT, Perplexity, Claude e Gemini
-- [x] SEO Técnico: `robots.txt`, `sitemap.xml` e Schema.org JSON-LD duplo (LocalBusiness + FAQPage)
-- [x] Seção FAQ [04] com 5 acordeões e normas ABNT NBR 16259/14 e NBR 13.303
-- [x] Adequação LGPD: Checkbox obrigatório no form + Modal completo de Política de Privacidade e Zero-Storage
-- [x] Sincronização estrita de `index.html` e `lp/index.html` em UTF-8
+- [x] Redesign completo **Quiet Luxury (Padrão R$ 5 mil)**: removida toda poluição visual e removidos os renders 3D artificiais
+- [x] 7 seções enxutas e mobile-first: Hero Editorial, Simulador Tátil da Sacada (sobre foto real da varanda gourmet), Especialidades em lista retrátil, Galeria com Lightbox GSAP Flip, 3 Provas da Marca, Orçamento em 2 toques + LGPD e Rodapé
+- [x] Notebook gratuito do **Kaggle (`motion/kaggle_wan22_murano.ipynb`)** pronto para gerar vídeo IA com **Wan 2.1/2.2**
+- [x] Skills instaladas: `launchworthy` (Scorecard 100/100) + `aprendizado-diretor` (`.agents/MEMORY_DIRETOR.md`)
+- [x] Blindagem mantida 100%: `vercel.json`, `llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD duplo e Modal LGPD
 
-## 3. Em Andamento Agora ⚙️
-- Deploy Git Commit & Push para `origin/main` atualizando a Vercel de produção.
-
-## 4. Próxima Ação Imediata 🎯
-- Auditoria autônoma do Diretor no link oficial da Vercel.
+## 3. Próxima Ação Opcional 🎯
+- Se desejar adicionar o vídeo gerado por IA, basta rodar `motion/kaggle_wan22_murano.ipynb` no Kaggle (GPU T4 grátis) e salvar como `assets/videos/sacada_wan22.mp4`.

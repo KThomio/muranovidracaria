@@ -20,3 +20,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://muranovidracaria.vercel.app/sitemap.xml
+
