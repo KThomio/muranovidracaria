@@ -1,10 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murano Vidraçaria | Envidraçamento de Sacadas e Projetos em Vidro em Sorocaba</title>
-  <meta name="description" content="Especialistas em envidraçamento de sacadas, coberturas de vidro, guarda-corpos, box de alto padrão, portas, janelas e espelhos em Sorocaba. Produção própria e certificação ABNT.">
+  <title>Murano Vidraçaria | Envidraçamento de Sacadas e Projetos em Vidro de Alto Padrão em Sorocaba</title>
+  <meta name="description" content="Especialistas em envidraçamento de sacadas (ABNT NBR 16259/14), coberturas em vidro, guarda-corpos, box de alto padrão, portas, janelas e espelhos em Sorocaba/SP. Produção própria e acabamento impecável.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Murano Vidraçaria Sorocaba Ltda">
+  <meta name="theme-color" content="#07051A">
+  <link rel="canonical" href="https://muranovidracaria.vercel.app/">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muranovidracaria.vercel.app/">
+  <meta property="og:title" content="Murano Vidraçaria | Alto Padrão em Vidros e Sacadas em Sorocaba">
+  <meta property="og:description" content="Envidraçamento de sacadas certificado ABNT NBR 16259/14, coberturas térmicas, guarda-corpos e projetos sob medida em Sorocaba e região.">
+  <meta property="og:image" content="https://muranovidracaria.vercel.app/assets/images/obra-envidracamento-sacada.png">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://muranovidracaria.vercel.app/">
+  <meta name="twitter:title" content="Murano Vidraçaria | Vidros de Alto Padrão em Sorocaba">
+  <meta name="twitter:description" content="Envidraçamento de sacadas com produção própria e rigor técnico ABNT em Sorocaba e região.">
+  <meta name="twitter:image" content="https://muranovidracaria.vercel.app/assets/images/obra-envidracamento-sacada.png">
+
+  <!-- Favicon / Ícone Oficial -->
+  <link rel="icon" type="image/png" href="assets/images/logo-murano-oficial.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,12 +40,14 @@
             'murano-navy': '#0C0926',
             'murano-surface': '#13103A',
             'murano-cyan': '#2BD9E0',
+            'murano-cyan-glow': 'rgba(43, 217, 224, 0.4)',
             'murano-silver': '#E8EAED'
           },
           fontFamily: {
             'serif': ['"Playfair Display"', 'serif'],
             'heading': ['"Space Grotesk"', 'sans-serif'],
-            'body': ['"Inter"', 'sans-serif']
+            'body': ['"Inter"', 'sans-serif'],
+            'mono': ['"JetBrains Mono"', 'monospace', 'ui-monospace']
           }
         }
       }
@@ -33,7 +57,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -42,6 +66,105 @@
   <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
+  <!-- Schema.org JSON-LD Duplo: LocalBusiness + FAQPage (SEO & GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://muranovidracaria.vercel.app/#organization",
+        "name": "Murano Vidraçaria",
+        "legalName": "Murano Vidraçaria Sorocaba Ltda",
+        "taxID": "64.581.884/0001-72",
+        "url": "https://muranovidracaria.vercel.app/",
+        "logo": "https://muranovidracaria.vercel.app/assets/images/logo-murano-oficial.png",
+        "image": "https://muranovidracaria.vercel.app/assets/images/obra-envidracamento-sacada.png",
+        "description": "Especialistas em envidraçamento de sacadas certificado ABNT NBR 16259/14, coberturas em vidro, guarda-corpos e esquadrias de alto padrão em Sorocaba e região.",
+        "telephone": "+55-15-99159-8438",
+        "email": "muranovidracaria@gmail.com",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Cervantes, 237",
+          "addressLocality": "Sorocaba",
+          "addressRegion": "SP",
+          "postalCode": "18025-174",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -23.5062,
+          "longitude": -47.4398
+        },
+        "areaServed": [
+          "Sorocaba",
+          "Votorantim",
+          "Itu",
+          "Porto Feliz",
+          "Boituva",
+          "Araçoiaba da Serra"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "34",
+          "bestRating": "5"
+        },
+        "sameAs": [
+          "https://www.instagram.com/muranovidros2/"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://muranovidracaria.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual a diferença do Sistema Encapsulado Sem Rolamentos para o sistema tradicional com roldanas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O sistema sem rolamentos mecânicos utiliza guias de deslizamento autolubrificantes e pivôs em aço inox 304 com entre-eixos de 30mm. Ele elimina o desgaste, a oxidação e o travamento comum de rolamentos expostos à umidade, proporcionando um deslize suave e manutenção drasticamente reduzida."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais normas da ABNT garantem a segurança do envidraçamento de sacada da Murano?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Todos os projetos seguem estritamente a norma ABNT NBR 16259/2014 para sistemas de envidraçamento articulado de ambientes, utilizando vidros laminados de segurança ou temperados dimensionados para a pressão de vento local, além da conformidade com a ABNT NBR 13.303 para ventilação permanente obrigatória via perfil veneziana VZ 060-P064."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Murano realiza apenas envidraçamento de sacadas ou atende obras completas em vidro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Atendemos o projeto completo: além de sacadas e varandas panorâmicas, executamos coberturas em vidro laminado/controle solar para pergolados e garagens, guarda-corpos em inox e vidro para escadas e piscinas, fechamentos de spas/gourmet, box até o teto ou Elegance, portas, janelas e espelhos sob medida."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Por que ter Produção Própria faz diferença no prazo e no acabamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Murano possui infraestrutura própria de corte, usinagem e montagem em Sorocaba. Isso elimina intermediários, garante tolerâncias milimétricas nas folgas técnicas de dilatação e permite cumprimento rigoroso dos prazos acordados com arquitetos e clientes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais cidades e condomínios a Murano Vidraçaria atende?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Atendemos toda a Região Metropolitana de Sorocaba, incluindo Votorantim, Itu, Porto Feliz (condomínio Fazenda Boa Vista), Salto, Boituva, Araçoiaba da Serra e principais condomínios verticais e horizontais (Parque Vida, Campolim, Alphaville, Fazenda Alvorada, Villa dos Inglezes, entre outros)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     body {
       background-color: #07051A;
@@ -49,24 +172,67 @@
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
+
+    /* Textura Film Grain Anti-AI-Slop (Opacidade 0.028 fixa) */
+    .film-grain-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 45;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Iluminação Arquitetônica de Fundo */
     .ambient-glow {
       background:
-        radial-gradient(circle at 20% 10%, rgba(43, 217, 224, 0.14) 0%, transparent 45%),
-        radial-gradient(circle at 80% 35%, rgba(43, 217, 224, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(19, 16, 58, 0.9) 0%, transparent 70%);
+        radial-gradient(circle at 18% 12%, rgba(43, 217, 224, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 82% 32%, rgba(43, 217, 224, 0.07) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(19, 16, 58, 0.95) 0%, transparent 70%);
     }
+
+    /* Cartão Glassmorphism Especular (Borda 1px Hairline) */
     .glass-card {
-      background: rgba(19, 16, 58, 0.55);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(19, 16, 58, 0.58);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
     }
     .glass-card:hover {
       border-color: rgba(43, 217, 224, 0.45);
       box-shadow: 0 20px 60px -15px rgba(43, 217, 224, 0.18);
     }
-    /* Glare effect inside Tilt Cards */
+
+    /* Marcadores CAD de Precisão (+) nos cantos */
+    .cad-crosshair {
+      position: relative;
+    }
+    .cad-crosshair::before,
+    .cad-crosshair::after {
+      content: '+';
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2BD9E0;
+      opacity: 0.4;
+      pointer-events: none;
+      line-height: 1;
+      z-index: 10;
+    }
+    .cad-crosshair::before {
+      top: 8px;
+      left: 10px;
+    }
+    .cad-crosshair::after {
+      bottom: 8px;
+      right: 10px;
+    }
+
+    /* Efeito Tilt 3D + Glare em Cards */
     .tilt-card {
       transform-style: preserve-3d;
       perspective: 1000px;
@@ -82,24 +248,139 @@
     .tilt-card:hover .tilt-glare {
       opacity: 1;
     }
+
     .text-gradient-murano {
-      background: linear-gradient(135deg, #FFFFFF 20%, #2BD9E0 100%);
+      background: linear-gradient(135deg, #FFFFFF 15%, #2BD9E0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .service-pill.active {
       background-color: #2BD9E0;
       color: #07051A;
       border-color: #2BD9E0;
       font-weight: 700;
-      box-shadow: 0 0 25px rgba(43, 217, 224, 0.4);
+      box-shadow: 0 0 25px rgba(43, 217, 224, 0.45);
     }
-    .property-pill.active {
-      background-color: rgba(43, 217, 224, 0.18);
-      border-color: #2BD9E0;
-      color: #FFFFFF;
+
+    /* Slider Comparador Before/After (HyperFrames) */
+    .ba-slider-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
     }
-    /* Superpowers Mobile-First: Hide scrollbars on native swipe carousels */
+    .ba-img-after,
+    .ba-img-before {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-before-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+      will-change: clip-path;
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--slider-pos, 50%);
+      width: 2px;
+      background: #2BD9E0;
+      box-shadow: 0 0 15px #2BD9E0;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 25;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: var(--slider-pos, 50%);
+      transform: translate(-50%, -50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 9999px;
+      background: #07051A;
+      border: 2px solid #2BD9E0;
+      box-shadow: 0 0 20px rgba(43, 217, 224, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2BD9E0;
+      pointer-events: none;
+      z-index: 30;
+    }
+    .ba-range-input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 35;
+      margin: 0;
+    }
+
+    /* Hotspots Técnicos Interativos */
+    .cad-hotspot {
+      position: absolute;
+      z-index: 28;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    .cad-hotspot-pin {
+      width: 28px;
+      height: 28px;
+      border-radius: 9999px;
+      background: rgba(7, 5, 26, 0.9);
+      border: 1.5px solid #2BD9E0;
+      box-shadow: 0 0 16px rgba(43, 217, 224, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: #2BD9E0;
+      transition: all 0.25s ease;
+    }
+    .cad-hotspot:hover .cad-hotspot-pin,
+    .cad-hotspot.active .cad-hotspot-pin {
+      background: #2BD9E0;
+      color: #07051A;
+      transform: scale(1.18);
+      box-shadow: 0 0 25px rgba(43, 217, 224, 0.9);
+    }
+    .cad-hotspot-pulse {
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      border: 1.5px solid #2BD9E0;
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    /* Acordeão FAQ Moderno */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary {
+      list-style: none;
+    }
+    details[open] summary svg {
+      transform: rotate(180deg);
+    }
+
+    /* Esconde barra de rolagem em carrosséis mobile */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -107,6 +388,7 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
     @keyframes pulse-border {
       0%, 100% { border-color: rgba(43, 217, 224, 0.35); box-shadow: 0 0 25px rgba(43, 217, 224, 0.2); }
       50% { border-color: rgba(43, 217, 224, 0.85); box-shadow: 0 0 45px rgba(43, 217, 224, 0.45); }
@@ -118,34 +400,44 @@
 </head>
 <body class="selection:bg-murano-cyan selection:text-murano-dark">
 
+  <!-- Textura Film Grain Anti-AI-Slop Overlay -->
+  <div class="film-grain-overlay" aria-hidden="true"></div>
+
   <!-- Iluminação Arquitetônica de Fundo -->
   <div class="fixed inset-0 ambient-glow pointer-events-none -z-10"></div>
 
-  <!-- NAVBAR FLUTUANTE COM LOGO OFICIAL -->
+  <!-- NAVBAR FLUTUANTE COM LOGO OFICIAL & LINKS ESTRATÉGICOS -->
   <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3 sm:py-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-4 sm:px-6 py-2.5 sm:py-3 rounded-full">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-4 sm:px-6 py-2.5 sm:py-3 rounded-full cad-crosshair">
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-        <img src="assets/images/logo-murano-oficial.png" alt="Logo Murano Vidraçaria" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover border border-murano-cyan/60 shadow-[0_0_20px_rgba(43,217,224,0.35)] group-hover:scale-105 transition-transform">
+        <img src="assets/images/logo-murano-oficial.png" alt="Logo Murano Vidraçaria" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl object-cover border border-murano-cyan/60 shadow-[0_0_20px_rgba(43,217,224,0.35)] group-hover:scale-105 transition-transform">
         <div class="flex flex-col">
           <div class="flex items-center gap-1.5">
             <span class="font-heading font-bold text-base sm:text-lg tracking-wider text-white leading-none">MURANO</span>
             <span class="hidden sm:inline-block px-1.5 py-0.5 rounded bg-murano-cyan/20 border border-murano-cyan/40 text-[9px] font-mono font-bold text-murano-cyan uppercase tracking-wider">Marca Exclusiva</span>
           </div>
-          <span class="text-[10px] font-mono tracking-[0.22em] text-murano-cyan uppercase mt-0.5">Vidraçaria</span>
+          <span class="text-[10px] font-mono tracking-[0.22em] text-murano-cyan uppercase mt-0.5">Vidraçaria · Sorocaba</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm text-slate-300 font-medium">
-        <a href="#solucoes" class="hover:text-murano-cyan transition-colors">Soluções em Vidro</a>
+      <nav class="hidden lg:flex items-center gap-6 text-xs text-slate-300 font-medium">
+        <a href="#solucoes" class="hover:text-murano-cyan transition-colors">Especialidades</a>
+        <a href="#tecnologia" class="hover:text-murano-cyan transition-colors">HyperFrames 3D</a>
         <a href="#obras" class="hover:text-murano-cyan transition-colors">Obras Reais</a>
-        <a href="#tecnologia" class="hover:text-murano-cyan transition-colors">Vitrine 3D Sacada</a>
-        <a href="#orcamento" class="hover:text-murano-cyan transition-colors">Orçamento Rápido</a>
+        <a href="#faq" class="hover:text-murano-cyan transition-colors">Normas & FAQ</a>
+        <a href="#orcamento" class="hover:text-murano-cyan transition-colors">Configurador 15s</a>
       </nav>
 
-      <a href="https://wa.me/5515991598438?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Murano%20Vidra%C3%A7aria%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="magnetic-btn bg-murano-cyan hover:bg-cyan-300 text-murano-dark font-heading font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-200 shadow-[0_0_20px_rgba(43,217,224,0.35)] flex items-center gap-2">
-        <span>Orçamento no WhatsApp</span>
-        <svg class="w-4 h-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </a>
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="openLgpdModal()" class="hidden md:flex items-center gap-1 text-[11px] font-mono text-slate-400 hover:text-murano-cyan transition-colors py-1 px-2.5 rounded-lg border border-white/10 hover:border-murano-cyan/30">
+          <svg class="w-3.5 h-3.5 text-murano-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span>LGPD & ABNT</span>
+        </button>
+        <a href="https://wa.me/5515991598438?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Murano%20Vidra%C3%A7aria%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="magnetic-btn bg-murano-cyan hover:bg-cyan-300 text-murano-dark font-heading font-bold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-[0_0_20px_rgba(43,217,224,0.35)] flex items-center gap-1.5">
+          <span>Orçamento WhatsApp</span>
+          <svg class="w-4 h-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -154,10 +446,10 @@
     <section class="min-h-screen pt-32 pb-20 px-6 flex items-center relative max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
         
-        <!-- Coluna Esquerda: Copy & CTAs -->
+        <!-- Coluna Esquerda: Copy Técnica & Prova Social -->
         <div class="lg:col-span-7 text-left">
-          <!-- Emblema de Marca Exclusiva Hero (Mobile & Desktop) -->
-          <div class="hero-anim inline-flex items-center gap-3.5 p-2 pr-5 rounded-2xl glass-card border border-murano-cyan/40 shadow-[0_0_30px_rgba(43,217,224,0.2)] exclusive-emblem mb-6">
+          <!-- Emblema de Marca Exclusiva Hero -->
+          <div class="hero-anim inline-flex items-center gap-3.5 p-2 pr-5 rounded-2xl glass-card border border-murano-cyan/40 shadow-[0_0_30px_rgba(43,217,224,0.2)] exclusive-emblem mb-6 cad-crosshair">
             <img src="assets/images/logo-murano-oficial.png" alt="Emblema Oficial Murano Vidraçaria" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-murano-cyan/60">
             <div class="text-left">
               <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.2em] text-murano-cyan font-bold">
@@ -173,18 +465,21 @@
           </h1>
 
           <p class="hero-anim text-slate-300 text-base sm:text-lg max-w-2xl mb-8 font-light leading-relaxed">
-            Especialistas em <strong class="text-white font-medium">Envidraçamento de Sacadas</strong>, Coberturas de Vidro, Guarda-Corpos, Box Piso-Teto, Portas, Janelas e Espelhos. Do projeto técnico à instalação impecável com certificação ABNT.
+            Especialistas em <strong class="text-white font-medium">Envidraçamento de Sacadas</strong>, Coberturas de Vidro, Guarda-Corpos, Box Piso-Teto, Portas, Janelas e Espelhos. Engenharia de ponta com vedação técnica e certificação ABNT NBR 16259/14.
           </p>
 
-          <!-- Prova Social Real Google -->
-          <div class="hero-anim flex flex-wrap items-center gap-4 mb-9">
+          <!-- Prova Social Real Google & Normas -->
+          <div class="hero-anim flex flex-wrap items-center gap-3 sm:gap-4 mb-9">
             <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm">
               <span class="text-amber-400 tracking-tighter text-base">★★★★★</span>
               <span class="text-white font-semibold">4.9/5 no Google</span>
-              <span class="text-slate-400">(34 avaliações verificadas)</span>
+              <span class="text-slate-400 font-mono text-xs">(34 avaliações reais)</span>
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl glass-card text-xs text-slate-300">
-              <span class="text-murano-cyan font-bold">✓</span> Norma ABNT NBR 16259/14
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl glass-card text-xs text-slate-300 font-mono">
+              <span class="text-murano-cyan font-bold">✓</span> ABNT NBR 16259/14
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl glass-card text-xs text-slate-300 font-mono">
+              <span class="text-murano-cyan font-bold">✓</span> Produção Própria
             </div>
           </div>
 
@@ -204,7 +499,7 @@
         <div class="lg:col-span-5 hero-anim relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
             <!-- Card Principal: Foto Real Sacada Envidraçada -->
-            <div class="tilt-card glass-card p-3 rounded-3xl relative overflow-hidden shadow-2xl">
+            <div class="tilt-card glass-card p-3 rounded-3xl relative overflow-hidden shadow-2xl cad-crosshair">
               <div class="tilt-glare"></div>
               <div class="aspect-[4/5] rounded-2xl overflow-hidden relative">
                 <img src="assets/images/obra-envidracamento-sacada.png" alt="Envidraçamento de Sacada Real executado pela Murano Vidraçaria" class="w-full h-full object-cover">
@@ -219,7 +514,7 @@
             </div>
 
             <!-- Card Flutuante Menor: Foto Real Guarda-Corpo & Área Gourmet -->
-            <div class="hidden sm:flex items-center gap-3 glass-card p-3 rounded-2xl absolute -bottom-6 -left-8 w-64 shadow-2xl border border-murano-cyan/30">
+            <div class="hidden sm:flex items-center gap-3 glass-card p-3 rounded-2xl absolute -bottom-6 -left-8 w-64 shadow-2xl border border-murano-cyan/30 cad-crosshair">
               <img src="assets/images/obra-guarda-corpo-area-gourmet.png" alt="Guarda-corpo e fechamento área gourmet Murano" class="w-16 h-16 rounded-xl object-cover shrink-0">
               <div>
                 <div class="text-xs font-heading font-bold text-white">Projetos Completos</div>
@@ -232,41 +527,41 @@
       </div>
     </section>
 
-    <!-- 2. GALERIA DE SOLUÇÕES EM VIDRO (Cards Glassmorphism + Tilt 3D) -->
+    <!-- 2. GALERIA DE SOLUÇÕES EM VIDRO (Design Taste: [ 01 // PORTFÓLIO DE ESPECIALIDADES ]) -->
     <section id="solucoes" class="py-24 px-6 max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">Portfólio de Especialidades</span>
+          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">[ 01 // PORTFÓLIO DE ESPECIALIDADES ]</span>
           <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
             Tudo em Vidros para o Seu Projeto
           </h2>
         </div>
         <p class="text-slate-400 text-sm sm:text-base max-w-md">
-          Foco total em vidraçaria técnica e decorativa com instalação própria. Clique na solução desejada para orçar diretamente.
+          Vidraçaria técnica de precisão e acabamento decorativo sob medida com instalação própria em Sorocaba e região.
         </p>
       </div>
 
       <!-- Indicador de Swipe para Mobile -->
       <div class="md:hidden flex items-center justify-between text-xs font-mono text-murano-cyan mb-4 px-1">
         <span class="flex items-center gap-1.5 font-semibold">
-          <span>← Deslize para ver todas as especialidades →</span>
+          <span>← Deslize horizontalmente para navegar →</span>
         </span>
-        <span class="text-[10px] text-slate-400">6 opções</span>
+        <span class="text-[10px] text-slate-400 font-mono">6 especialidades</span>
       </div>
 
       <div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-4 -mx-6 px-6 md:mx-0 md:px-0">
         
         <!-- Solução 1: Envidraçamento de Sacadas (Carro-Chefe) -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Envidraçamento de Sacada / Varanda')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Envidraçamento de Sacada / Varanda')">
           <div class="tilt-glare"></div>
           <div>
             <div class="aspect-video rounded-xl overflow-hidden mb-5 relative">
               <img src="assets/images/obra-envidracamento-sacada.png" alt="Envidraçamento de Sacadas Murano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-murano-dark/80 backdrop-blur-md border border-murano-cyan/40 text-murano-cyan text-[11px] font-mono font-semibold">Carro-Chefe</span>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-murano-dark/80 backdrop-blur-md border border-murano-cyan/40 text-murano-cyan text-[11px] font-mono font-semibold">Carro-Chefe · NBR 16259</span>
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Envidraçamento de Sacadas</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Fechamento de varandas em vidro laminado ou temperado conforme norma ABNT NBR 16259/14. Proteção contra vento, chuva, poeira e ruído com abertura total.
+              Fechamento articulado com abertura de 90° e recolhimento total. Vedação técnica contra vento, chuva e poeira conforme ABNT NBR 16259/14 e ventilação NBR 13.303.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -276,16 +571,16 @@
         </div>
 
         <!-- Solução 2: Coberturas de Vidro & Pergolados -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Cobertura de Vidro / Pergolado')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Cobertura de Vidro / Pergolado')">
           <div class="tilt-glare"></div>
           <div>
             <div class="aspect-video rounded-xl overflow-hidden mb-5 relative">
               <img src="assets/images/obra-cobertura-pergolado.jpg" alt="Cobertura de Vidro executada pela Murano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-murano-dark/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono">Alto Padrão</span>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-murano-dark/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono">Conforto Térmico</span>
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Coberturas de Vidro & Pergolados</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Coberturas em vidro laminado refletivo ou incolor com vedação de alta performance. Ideal para garagens, pergolados, áreas gourmet e corredores externos.
+              Vidro laminado refletivo de controle solar com fixação estrutural e calhas de drenagem. Conforto térmico para garagens, áreas gourmet e pergolados.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -295,7 +590,7 @@
         </div>
 
         <!-- Solução 3: Guarda-Corpo & Fechamento de Área Gourmet -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Guarda-Corpo / Fechamento de Área Gourmet')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Guarda-Corpo / Fechamento de Área Gourmet')">
           <div class="tilt-glare"></div>
           <div>
             <div class="aspect-video rounded-xl overflow-hidden mb-5 relative">
@@ -304,7 +599,7 @@
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Guarda-Corpos & Áreas Gourmet</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Guarda-corpos para escadas, sacadas e decks (botton, torre de inox ou embutido) e fechamentos panorâmicos deslizantes para espaços gourmet e jacuzzis.
+              Guarda-corpos para escadas, sacadas e decks em vidro laminado temperado (torres inox, botton ou embutido no piso) e fechamentos panorâmicos de spas.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -314,7 +609,7 @@
         </div>
 
         <!-- Solução 4: Box de Banheiro (Elegance / Piso-Teto / Canto) -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Box para Banheiro (Elegance / Piso-Teto / Padrão)')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Box para Banheiro (Elegance / Piso-Teto / Padrão)')">
           <div class="tilt-glare"></div>
           <div>
             <div class="w-12 h-12 rounded-xl bg-murano-cyan/15 border border-murano-cyan/30 flex items-center justify-center text-murano-cyan mb-5">
@@ -322,7 +617,7 @@
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Box de Banheiro Sob Medida</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Box Elegance com roldanas aparentes cromadas, pretas ou douradas, Box até o teto e modelos tradicionais com vidro temperado de segurança 8mm.
+              Box Elegance com roldanas aparentes inox, Box até o teto com perfil slim e modelos de canto em vidro temperado de segurança 8mm.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -332,7 +627,7 @@
         </div>
 
         <!-- Solução 5: Portas e Janelas de Vidro Temperado -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Portas e Janelas de Vidro')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Portas e Janelas de Vidro')">
           <div class="tilt-glare"></div>
           <div>
             <div class="w-12 h-12 rounded-xl bg-murano-cyan/15 border border-murano-cyan/30 flex items-center justify-center text-murano-cyan mb-5">
@@ -340,7 +635,7 @@
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Portas & Janelas em Vidro</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Portas pivotantes, portas de correr com trilho oculto ou aparente e janelas sob medida para residências, escritórios e fachadas comerciais.
+              Portas pivotantes de entrada, portas de correr com fechamento acústico e janelas personalizadas para residências e projetos comerciais.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -350,7 +645,7 @@
         </div>
 
         <!-- Solução 6: Espelhos Decorativos, Bisotados & LED -->
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer" onclick="selectServiceAndScroll('Espelhos Sob Medida / Decorativos')">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer cad-crosshair" onclick="selectServiceAndScroll('Espelhos Sob Medida / Decorativos')">
           <div class="tilt-glare"></div>
           <div>
             <div class="w-12 h-12 rounded-xl bg-murano-cyan/15 border border-murano-cyan/30 flex items-center justify-center text-murano-cyan mb-5">
@@ -358,7 +653,7 @@
             </div>
             <h3 class="font-heading text-xl font-bold text-white mb-2 group-hover:text-murano-cyan transition-colors">Espelhos Sob Medida & LED</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Espelhos prata, bronze e fumê (Cebrace/Guardian) com acabamento lapidado, bisotê ou orgânico com iluminação LED para salas, lavabos e academias.
+              Espelhos prata, bronze e fumê Cebrace/Guardian com acabamento lapidado, bisotê lapidado e iluminação backlight LED integrada.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-murano-cyan">
@@ -370,49 +665,171 @@
       </div>
     </section>
 
-    <!-- 3. VITRINE INTERATIVA 3D (Scrollytelling Específico do Sistema Sem Rolamentos) -->
-    <section id="tecnologia" class="w-full min-h-screen bg-murano-navy/70 py-14 px-4 sm:px-6 flex flex-col justify-center relative overflow-hidden border-y border-white/10">
+    <!-- 3. HYPERFRAMES INTERACTIVE STUDIO (Design Taste: [ 02 // HYPERFRAMES 3D & ENGENHARIA CAD ]) -->
+    <section id="tecnologia" class="w-full min-h-screen bg-murano-navy/80 py-16 px-4 sm:px-6 flex flex-col justify-center relative overflow-hidden border-y border-white/10">
       <div class="max-w-5xl w-full mx-auto relative z-10 flex flex-col gap-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        
+        <!-- Cabeçalho da Seção com Seletor Duplo de Visualização -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span class="text-murano-cyan font-mono tracking-widest uppercase text-xs mb-2 block">Vitrine Interativa 3D · Role a Página para Abrir as Folhas</span>
-            <h2 class="text-2xl sm:text-4xl font-heading font-bold text-white">Conheça Também a Opção de Sistema Sem Rolamentos</h2>
+            <span class="text-murano-cyan font-mono tracking-widest uppercase text-xs mb-2 block font-semibold">[ 02 // HYPERFRAMES 3D & ENGENHARIA CAD ]</span>
+            <h2 class="text-2xl sm:text-4xl font-heading font-bold text-white">Inspeção Interativa da Engenharia Murano</h2>
+            <p class="text-slate-300 font-light text-xs sm:text-sm max-w-xl mt-2 leading-relaxed">
+              Explore a precisão do sistema de fechamento de sacadas. Escolha entre o comparador com hotspots ou o vídeo contínuo em 240 frames.
+            </p>
           </div>
-          <p class="text-slate-300 font-light text-xs sm:text-sm max-w-md">
-            Demonstração técnica do sistema deslize e giro (Slide & Turn) aplicado em sacadas com recolhimento lateral de 90°.
-          </p>
+
+          <!-- Seletor de Modo HyperFrames -->
+          <div class="inline-flex p-1 rounded-2xl glass-card border border-murano-cyan/30 self-start md:self-auto shrink-0">
+            <button type="button" id="tab-btn-compare" onclick="switchHyperMode('compare')" class="px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all bg-murano-cyan text-murano-dark shadow-[0_0_15px_rgba(43,217,224,0.4)]">
+              Comparador + Hotspots
+            </button>
+            <button type="button" id="tab-btn-video" onclick="switchHyperMode('video')" class="px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-300 hover:text-white transition-all">
+              Vídeo 3D (240 Frames)
+            </button>
+          </div>
         </div>
 
-        <div id="video-motion-container" class="w-full aspect-video bg-murano-dark rounded-2xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] border border-murano-cyan/30 overflow-hidden relative">
-          <video id="sacada-motion-video"
-                 src="assets/videos/preview_animacao.mp4"
-                 class="block w-full h-full object-cover scale-[1.01]"
-                 muted playsinline preload="auto"
-                 aria-label="Animação 3D interativa do sistema de envidraçamento de sacada da Murano"></video>
+        <!-- MODO 1: COMPARADOR ANTES/DEPOIS + HOTSPOTS CAD (PADRÃO INTERATIVO) -->
+        <div id="hyper-mode-compare" class="w-full flex flex-col gap-4">
+          <div class="relative w-full aspect-[16/10] sm:aspect-video bg-murano-dark rounded-3xl shadow-[0_25px_80px_-15px_rgba(0,0,0,0.9)] border border-murano-cyan/35 overflow-hidden cad-crosshair">
+            
+            <!-- Palco do Comparador Before/After -->
+            <div class="ba-slider-container" id="ba-container">
+              <!-- Imagem de Fundo (After: Sacada Aberta 90° recolhida) -->
+              <img src="assets/images/keyframes/keyframe_03_aberto_total.png" alt="Sacada Murano com abertura total de 90 graus" class="ba-img-after">
+              <span class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-murano-dark/85 backdrop-blur-md border border-white/20 text-slate-200 text-[10px] font-mono pointer-events-none">
+                ABERTO 90° (RECOLHIDO)
+              </span>
 
-          <!-- HUD Inferior de Estágio Cinemático -->
-          <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-murano-dark/95 via-murano-dark/70 to-transparent pt-10 pb-4 px-5 flex flex-col gap-2">
-            <div class="flex items-center justify-between text-xs tracking-wider uppercase">
-              <div class="flex items-center gap-2.5">
-                <span id="motion-stage-step" class="px-2.5 py-0.5 rounded-full bg-murano-cyan/20 border border-murano-cyan/50 text-murano-cyan font-mono font-bold">01 / 04</span>
-                <span id="motion-stage-label" class="text-white font-medium text-xs sm:text-sm">Folha 01 · Destravamento e Giro 90° no Alojamento</span>
+              <!-- Imagem Sobreposta (Before: Sacada Fechada recortada pelo slider) -->
+              <div class="ba-before-wrapper" id="ba-before-wrap">
+                <img src="assets/images/keyframes/keyframe_01_fechado.png" alt="Sacada Murano fechada com vedação técnica NBR 16259" class="ba-img-before">
+                <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-murano-dark/85 backdrop-blur-md border border-murano-cyan/40 text-murano-cyan text-[10px] font-mono pointer-events-none">
+                  FECHADO (PROTEÇÃO ABNT)
+                </span>
               </div>
-              <span id="motion-progress-pct" class="text-murano-cyan font-mono font-bold">0%</span>
+
+              <!-- Linha Divisória e Puxador Interativo -->
+              <div class="ba-divider" id="ba-divider"></div>
+              <div class="ba-handle" id="ba-handle" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"/></svg>
+              </div>
+
+              <!-- Input Range para Interação por Toque e Mouse -->
+              <input type="range" min="0" max="100" value="50" class="ba-range-input" id="ba-range" aria-label="Deslize para comparar a sacada fechada e aberta">
+
+              <!-- 4 HOTSPOTS TÉCNICOS CLICÁVEIS -->
+              <!-- Hotspot 01: Trilho Superior Alumínio RAL 9005 -->
+              <div class="cad-hotspot" style="top: 17%; left: 26%;" onclick="openHotspot(1)">
+                <div class="cad-hotspot-pulse"></div>
+                <div class="cad-hotspot-pin" id="pin-1">01</div>
+              </div>
+
+              <!-- Hotspot 02: Alojamento & Pivôs em Inox 30mm -->
+              <div class="cad-hotspot" style="top: 22%; left: 74%;" onclick="openHotspot(2)">
+                <div class="cad-hotspot-pulse"></div>
+                <div class="cad-hotspot-pin" id="pin-2">02</div>
+              </div>
+
+              <!-- Hotspot 03: Vidro Laminado Incolor 10mm (5+5) -->
+              <div class="cad-hotspot" style="top: 52%; left: 48%;" onclick="openHotspot(3)">
+                <div class="cad-hotspot-pulse"></div>
+                <div class="cad-hotspot-pin" id="pin-3">03</div>
+              </div>
+
+              <!-- Hotspot 04: Veneziana Técnica VZ 060-P064 (NBR 13.303) -->
+              <div class="cad-hotspot" style="top: 42%; left: 88%;" onclick="openHotspot(4)">
+                <div class="cad-hotspot-pulse"></div>
+                <div class="cad-hotspot-pin" id="pin-4">04</div>
+              </div>
+
             </div>
-            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-              <div id="motion-progress-bar" class="w-full h-full bg-murano-cyan origin-left scale-x-0 transition-transform duration-75"></div>
+
+            <!-- Dica Flutuante Inferior -->
+            <div class="pointer-events-none absolute bottom-3 left-4 right-4 z-20 flex items-center justify-between text-[11px] font-mono text-slate-300 bg-murano-dark/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-murano-cyan"></span>
+                <span>Arraste o divisor para comparar os estados da sacada</span>
+              </span>
+              <span class="text-murano-cyan">Clique nos pontos [01-04] para inspecionar</span>
+            </div>
+          </div>
+
+          <!-- CARD DE INSPEÇÃO CAD DINÂMICO DOS HOTSPOTS -->
+          <div id="hotspot-inspector" class="glass-card p-5 sm:p-6 rounded-2xl border border-murano-cyan/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div id="insp-badge" class="w-10 h-10 rounded-xl bg-murano-cyan/20 border border-murano-cyan text-murano-cyan font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                01
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span id="insp-cat" class="text-[10px] font-mono uppercase text-murano-cyan font-bold tracking-wider">Perfil Estrutural</span>
+                  <span class="text-slate-500 text-xs">|</span>
+                  <span id="insp-norma" class="text-[10px] font-mono text-slate-400">Norma ABNT NBR 16259</span>
+                </div>
+                <h4 id="insp-title" class="font-heading font-bold text-white text-base sm:text-lg mt-0.5">
+                  Trilho Superior Alumínio RAL 9005 & Vedação com Escovas 5x6
+                </h4>
+                <p id="insp-desc" class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed max-w-2xl">
+                  Perfil usinado em liga estrutural 6063-T6 com rasgo de 24mm e duplo leito de vedação por escovas de polipropileno hidrorrepelentes contra rajadas de vento e infiltração pluvial.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button type="button" onclick="cycleHotspot(-1)" class="w-9 h-9 rounded-lg border border-white/15 bg-white/5 hover:border-murano-cyan text-slate-300 hover:text-white flex items-center justify-center text-xs font-mono">
+                ←
+              </button>
+              <button type="button" onclick="cycleHotspot(1)" class="w-9 h-9 rounded-lg border border-white/15 bg-white/5 hover:border-murano-cyan text-slate-300 hover:text-white flex items-center justify-center text-xs font-mono">
+                →
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- MODO 2: VÍDEO SCROLLYTELLING 3D (240 FRAMES) -->
+        <div id="hyper-mode-video" class="w-full hidden flex-col gap-4">
+          <div id="video-motion-container" class="w-full aspect-video bg-murano-dark rounded-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] border border-murano-cyan/35 overflow-hidden relative cad-crosshair">
+            <video id="sacada-motion-video"
+                   src="assets/videos/preview_animacao.mp4"
+                   class="block w-full h-full object-cover scale-[1.01]"
+                   muted playsinline preload="auto"
+                   aria-label="Animação 3D interativa do sistema de envidraçamento de sacada da Murano"></video>
+
+            <!-- Botão Play / Pause Manual -->
+            <button type="button" id="video-play-toggle" onclick="toggleVideoPlayback()" class="absolute top-4 right-4 z-30 px-3.5 py-1.5 rounded-full bg-murano-dark/80 backdrop-blur-md border border-murano-cyan/40 text-murano-cyan hover:bg-murano-cyan hover:text-murano-dark text-xs font-mono flex items-center gap-1.5 transition-all">
+              <span id="play-btn-icon">▶</span>
+              <span id="play-btn-text">Assistir Contínuo</span>
+            </button>
+
+            <!-- HUD Inferior de Estágio Cinemático -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-murano-dark/95 via-murano-dark/70 to-transparent pt-10 pb-4 px-5 flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs tracking-wider uppercase">
+                <div class="flex items-center gap-2.5">
+                  <span id="motion-stage-step" class="px-2.5 py-0.5 rounded-full bg-murano-cyan/20 border border-murano-cyan/50 text-murano-cyan font-mono font-bold">01 / 04</span>
+                  <span id="motion-stage-label" class="text-white font-medium text-xs sm:text-sm">Folha 01 · Destravamento e Giro 90° no Alojamento</span>
+                </div>
+                <span id="motion-progress-pct" class="text-murano-cyan font-mono font-bold">0%</span>
+              </div>
+              <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div id="motion-progress-bar" class="w-full h-full bg-murano-cyan origin-left scale-x-0 transition-transform duration-75"></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center text-xs font-mono text-slate-400">
+            Dica: No modo de vídeo, você também pode rolar a página verticalmente para controlar a cinemática frame a frame.
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- 4. GALERIA DE OBRAS REAIS (@muranovidros2) -->
+    <!-- 4. GALERIA DE OBRAS REAIS (Design Taste: [ 03 // OBRAS REAIS EXECUTADAS ]) -->
     <section id="obras" class="py-24 px-6 max-w-6xl mx-auto">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
-          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">Acabamento Comprovado</span>
-          <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Obras Reais Executadas pela Murano</h2>
+          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">[ 03 // OBRAS REAIS EXECUTADAS ]</span>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Acabamento de Alto Padrão em Obras Reais</h2>
         </div>
         <a href="https://www.instagram.com/muranovidros2/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-murano-cyan hover:underline">
           <span>Ver mais no Instagram @muranovidros2</span>
@@ -423,43 +840,46 @@
       <!-- Indicador de Swipe para Mobile -->
       <div class="md:hidden flex items-center justify-between text-xs font-mono text-murano-cyan mb-4 px-1">
         <span class="flex items-center gap-1.5 font-semibold">
-          <span>← Deslize para ver as obras reais →</span>
+          <span>← Deslize para ver as fotos das obras →</span>
         </span>
-        <span class="text-[10px] text-slate-400">3 projetos</span>
+        <span class="text-[10px] text-slate-400 font-mono">3 projetos</span>
       </div>
 
       <div class="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-4 -mx-6 px-6 md:mx-0 md:px-0">
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group cad-crosshair">
           <div class="aspect-[4/5] overflow-hidden relative">
-            <img src="assets/images/obra-envidracamento-sacada.png" alt="Sacada envidraçada pela Murano Vidraçaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/90 via-transparent to-transparent flex items-end p-6">
+            <img src="assets/images/obra-envidracamento-sacada.png" alt="Sacada envidraçada pela Murano Vidraçaria em Sorocaba" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/95 via-transparent to-transparent flex items-end p-6">
               <div>
-                <span class="text-[11px] font-mono text-murano-cyan uppercase">Envidraçamento de Sacada</span>
-                <h4 class="text-white font-heading font-bold text-lg">Fechamento Panorâmico com Trilho Embutido</h4>
+                <span class="text-[11px] font-mono text-murano-cyan uppercase tracking-wider">Envidraçamento de Sacada</span>
+                <h4 class="text-white font-heading font-bold text-lg mt-0.5">Fechamento Panorâmico com Trilho Embutido</h4>
+                <p class="text-xs text-slate-300 mt-1">Acabamento nivelado com o piso para passagem livre e integração da sala com a varanda.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group cad-crosshair">
           <div class="aspect-[4/5] overflow-hidden relative">
             <img src="assets/images/obra-cobertura-pergolado.jpg" alt="Cobertura de vidro para garagem e pergolado Murano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/90 via-transparent to-transparent flex items-end p-6">
+            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/95 via-transparent to-transparent flex items-end p-6">
               <div>
-                <span class="text-[11px] font-mono text-murano-cyan uppercase">Coberturas de Vidro</span>
-                <h4 class="text-white font-heading font-bold text-lg">Pergolado com Cobertura Laminada de Controle Solar</h4>
+                <span class="text-[11px] font-mono text-murano-cyan uppercase tracking-wider">Coberturas de Vidro</span>
+                <h4 class="text-white font-heading font-bold text-lg mt-0.5">Pergolado com Vidro Laminado de Controle Solar</h4>
+                <p class="text-xs text-slate-300 mt-1">Conforto térmico, iluminação natural e proteção UV para veículos e convivência.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group">
+        <div class="snap-center shrink-0 w-[84vw] sm:w-[360px] md:w-auto glass-card rounded-2xl overflow-hidden group cad-crosshair">
           <div class="aspect-[4/5] overflow-hidden relative">
             <img src="assets/images/obra-guarda-corpo-area-gourmet.png" alt="Guarda-corpo em vidro e fechamento área gourmet Murano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/90 via-transparent to-transparent flex items-end p-6">
+            <div class="absolute inset-0 bg-gradient-to-t from-murano-dark/95 via-transparent to-transparent flex items-end p-6">
               <div>
-                <span class="text-[11px] font-mono text-murano-cyan uppercase">Projetos Residenciais Completos</span>
-                <h4 class="text-white font-heading font-bold text-lg">Guarda-Corpo de Escada + Fechamento de Spa</h4>
+                <span class="text-[11px] font-mono text-murano-cyan uppercase tracking-wider">Projetos Residenciais Completos</span>
+                <h4 class="text-white font-heading font-bold text-lg mt-0.5">Guarda-Corpo de Escada + Fechamento de Spa</h4>
+                <p class="text-xs text-slate-300 mt-1">Torres em aço inox, vidro temperado laminado e integração sofisticada com o lazer.</p>
               </div>
             </div>
           </div>
@@ -467,16 +887,84 @@
       </div>
     </section>
 
-    <!-- 5. CONFIGURADOR RÁPIDO DE ORÇAMENTO (15 SEGUNDOS -> WHATSAPP) -->
+    <!-- 5. NOVA SEÇÃO FAQ & NORMAS ABNT (Design Taste: [ 04 // NORMAS ABNT & PERGUNTAS FREQUENTES ]) -->
+    <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">[ 04 // NORMAS ABNT & PERGUNTAS FREQUENTES ]</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Transparência Técnica e Respostas Claras</h2>
+        <p class="text-slate-300 text-sm max-w-xl mx-auto">Tudo o que você precisa saber sobre a segurança, normas de condomínio e diferenciais de fabricação da Murano.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <details class="group glass-card rounded-2xl border border-white/10 hover:border-murano-cyan/40 p-5 transition-all">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-heading font-bold text-base sm:text-lg">
+            <span>Qual a diferença do Sistema Encapsulado Sem Rolamentos para o sistema tradicional com roldanas?</span>
+            <svg class="w-5 h-5 text-murano-cyan transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-slate-300 text-sm leading-relaxed font-light">
+            O sistema sem rolamentos mecânicos utiliza guias autolubrificantes e eixos pivô em aço inox 304 com espaçamento de 30mm. Ao eliminar esferas e rolamentos convencionais expostos à maresia, umidade e poeira, você elimina a oxidação e o risco de as folhas travarem com o tempo, garantindo um deslizamento silencioso e duradouro.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group glass-card rounded-2xl border border-white/10 hover:border-murano-cyan/40 p-5 transition-all">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-heading font-bold text-base sm:text-lg">
+            <span>Quais normas da ABNT garantem a segurança do envidraçamento de sacada da Murano?</span>
+            <svg class="w-5 h-5 text-murano-cyan transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-slate-300 text-sm leading-relaxed font-light">
+            Todos os projetos atendem rigorosamente à <strong>ABNT NBR 16259/2014</strong> (Sistemas de envidraçamento de sacadas), com vidros de segurança dimensionados para a pressão de vento de Sorocaba e região. Além disso, incorporamos a veneziana técnica <strong>VZ 060-P064</strong> com aletas de 30mm conforme a norma <strong>ABNT NBR 13.303</strong>, garantindo a ventilação permanente obrigatória para exaustão contínua em varandas gourmet com aquecedor ou churrasqueira.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group glass-card rounded-2xl border border-white/10 hover:border-murano-cyan/40 p-5 transition-all">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-heading font-bold text-base sm:text-lg">
+            <span>A Murano atende apenas sacadas ou executa projetos completos em vidro?</span>
+            <svg class="w-5 h-5 text-murano-cyan transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-slate-300 text-sm leading-relaxed font-light">
+            Somos uma vidraçaria completa de alto padrão: atendemos desde o fechamento panorâmico de varandas até coberturas térmicas de vidro, guarda-corpos em inox e vidro para escadas e piscinas, fechamento de áreas gourmet e spas, box de banheiro (Elegance e Piso-Teto), portas pivotantes e espelhos decorativos Cebrace/Guardian com LED.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group glass-card rounded-2xl border border-white/10 hover:border-murano-cyan/40 p-5 transition-all">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-heading font-bold text-base sm:text-lg">
+            <span>Por que a Produção Própria da Murano faz diferença no prazo e no resultado?</span>
+            <svg class="w-5 h-5 text-murano-cyan transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-slate-300 text-sm leading-relaxed font-light">
+            Não terceirizamos a fabricação. Toda a etapa de corte, usinagem dos trilhos de alumínio, lapidação dos vidros e montagem dos conjuntos é realizada pela nossa equipe em Sorocaba. Isso assegura precisão milimétrica nas folgas de dilatação, padrão estético superior e cumprimento pontual dos cronogramas combinados.
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="group glass-card rounded-2xl border border-white/10 hover:border-murano-cyan/40 p-5 transition-all">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-heading font-bold text-base sm:text-lg">
+            <span>Quais cidades e condomínios a Murano Vidraçaria atende?</span>
+            <svg class="w-5 h-5 text-murano-cyan transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-slate-300 text-sm leading-relaxed font-light">
+            Atendemos toda a cidade de Sorocaba e cidades vizinhas como Votorantim, Itu, Porto Feliz (incluindo Fazenda Boa Vista), Salto, Boituva e Araçoiaba da Serra, com vasta experiência nas especificações dos regulamentos internos dos condomínios residenciais mais exigentes.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- 6. CONFIGURADOR RÁPIDO DE ORÇAMENTO (Design Taste: [ 05 // CONFIGURADOR TÉCNICO 15S ]) + LGPD COMPLIANCE -->
     <section id="orcamento" class="py-24 px-6 max-w-4xl mx-auto">
-      <div class="glass-card p-8 sm:p-12 rounded-3xl border border-murano-cyan/30 relative overflow-hidden shadow-[0_0_80px_-20px_rgba(43,217,224,0.2)]">
+      <div class="glass-card p-8 sm:p-12 rounded-3xl border border-murano-cyan/35 relative overflow-hidden shadow-[0_0_80px_-20px_rgba(43,217,224,0.2)] cad-crosshair">
         <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">Atendimento Direto com Especialista</span>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Solicite Seu Orçamento em 15 Segundos</h2>
-          <p class="text-slate-300 text-sm">Selecione abaixo o que você precisa e envie diretamente para o nosso WhatsApp técnico em Sorocaba.</p>
+          <span class="text-murano-cyan font-mono uppercase text-xs tracking-widest font-semibold block mb-2">[ 05 // CONFIGURADOR TÉCNICO 15S ]</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Solicite Seu Orçamento Técnico em 15 Segundos</h2>
+          <p class="text-slate-300 text-sm">Selecione abaixo os itens do seu projeto e envie diretamente para o WhatsApp comercial oficial da Murano em Sorocaba.</p>
         </div>
 
-        <form id="configurador-form" class="space-y-8">
+        <form id="configurador-form" class="space-y-8" onsubmit="handleConfiguradorSubmit(event)">
           <!-- Passo 1: Qual serviço você procura? -->
           <div>
             <label class="block text-xs font-mono uppercase text-murano-cyan mb-3">1. O que você deseja orçar? (Pode selecionar mais de um)</label>
@@ -515,9 +1003,19 @@
             </div>
 
             <div>
-              <label for="imovel-local" class="block text-xs font-mono uppercase text-murano-cyan mb-2">3. Condomínio ou Bairro (Opcional)</label>
-              <input type="text" id="imovel-local" placeholder="Ex: Parque Vida, Campolim, Wanel Ville..." class="w-full bg-murano-dark/90 border border-white/15 rounded-xl px-4 py-3.5 text-white text-sm focus:border-murano-cyan focus:outline-none">
+              <label for="imovel-local" class="block text-xs font-mono uppercase text-murano-cyan mb-2">3. Condomínio ou Bairro em Sorocaba/Região (Opcional)</label>
+              <input type="text" id="imovel-local" maxlength="80" placeholder="Ex: Parque Vida, Campolim, Wanel Ville..." class="w-full bg-murano-dark/90 border border-white/15 rounded-xl px-4 py-3.5 text-white text-sm focus:border-murano-cyan focus:outline-none">
             </div>
+          </div>
+
+          <!-- CHECKBOX DE CONSENTIMENTO EXPRESSO LGPD -->
+          <div class="pt-1">
+            <label class="flex items-start gap-3 cursor-pointer group text-xs text-slate-300">
+              <input type="checkbox" id="cfg-lgpd" required class="mt-0.5 rounded bg-murano-dark border border-murano-cyan/40 text-murano-cyan focus:ring-murano-cyan h-4 w-4 shrink-0 accent-[#2BD9E0]">
+              <span class="leading-relaxed">
+                Concordo em enviar os dados acima diretamente para o WhatsApp comercial da <strong>Murano Vidraçaria Sorocaba Ltda (CNPJ 64.581.884/0001-72)</strong> exclusivamente para fins de atendimento e orçamento, conforme a <button type="button" onclick="openLgpdModal()" class="text-murano-cyan underline hover:text-cyan-300 font-medium">Política de Privacidade e LGPD</button> (nenhum dado é armazenado em banco de dados neste site).
+              </span>
+            </label>
           </div>
 
           <!-- Botão de Envio Direto WhatsApp -->
@@ -530,30 +1028,109 @@
     </section>
   </main>
 
-  <!-- RODAPÉ OFICIAL COM DADOS 100% VERIFICADOS -->
-  <footer class="bg-murano-navy/90 border-t border-white/10 pt-14 pb-24 md:pb-10 px-6">
+  <!-- MODAL COMPLETO DE POLÍTICA DE PRIVACIDADE & CONFORMIDADE LGPD (Lei 13.709/2018) -->
+  <div id="modal-lgpd" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-murano-dark/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-lgpd-title">
+    <div class="glass-card max-w-2xl w-full max-h-[85vh] rounded-3xl p-6 sm:p-8 border border-murano-cyan/40 shadow-2xl flex flex-col overflow-hidden cad-crosshair">
+      <div class="flex items-center justify-between pb-4 border-b border-white/10">
+        <div>
+          <span class="text-murano-cyan font-mono text-[10px] uppercase tracking-widest font-bold">Transparência & Conformidade Jurídica</span>
+          <h3 id="modal-lgpd-title" class="text-lg sm:text-xl font-heading font-bold text-white mt-0.5">
+            Política de Privacidade, Termos Técnicos & LGPD
+          </h3>
+        </div>
+        <button type="button" onclick="closeLgpdModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center text-sm font-mono transition-colors" aria-label="Fechar modal">
+          ✕
+        </button>
+      </div>
+
+      <div class="overflow-y-auto space-y-4 py-5 text-xs sm:text-sm text-slate-300 leading-relaxed pr-2 font-light">
+        <div>
+          <h4 class="font-heading font-bold text-white text-sm sm:text-base">1. Identificação da Controladora</h4>
+          <p class="mt-1">
+            Este site é de titularidade e operado por <strong>Murano Vidraçaria Sorocaba Ltda</strong>, pessoa jurídica de direito privado inscrita no CNPJ sob o nº <strong>64.581.884/0001-72</strong>, com sede na Rua Cervantes, 237 - Vila Assis, Sorocaba - SP, CEP 18025-174.
+          </p>
+          <p class="mt-1 text-slate-400">
+            Encarregado pelo Tratamento de Dados (DPO / Atendimento): <strong>Caroline Oliveira</strong> | E-mail: <a href="mailto:muranovidracaria@gmail.com" class="text-murano-cyan underline">muranovidracaria@gmail.com</a> | Telefone: (15) 99159-8438.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-white text-sm sm:text-base">2. Arquitetura Zero-Storage e Coleta Mínima</h4>
+          <p class="mt-1">
+            Em conformidade com o princípio da necessidade (Art. 6º, III da Lei Federal nº 13.709/2018 - LGPD), este website opera sob uma arquitetura de <strong>Zero-Storage (Zero Armazenamento Oculto)</strong>. Não mantemos banco de dados remoto com cadastros de visitantes, não utilizamos cookies de rastreamento de perfil e não comercializamos dados pessoais com terceiros.
+          </p>
+          <p class="mt-1">
+            Ao preencher o configurador de orçamento, a mensagem é formatada localmente pelo navegador do seu dispositivo e transmitida diretamente ao aplicativo WhatsApp comercial oficial da empresa por iniciativa voluntária do usuário.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-white text-sm sm:text-base">3. Direitos do Titular (Art. 18 da LGPD)</h4>
+          <p class="mt-1">
+            O titular tem o direito de solicitar a confirmação do tratamento, acesso aos dados trocados em orçamento, correção ou eliminação definitiva das conversas pelo e-mail <strong>muranovidracaria@gmail.com</strong> ou diretamente via WhatsApp comercial.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-white text-sm sm:text-base">4. Nota Técnica e Normas ABNT NBR 16259/14 e NBR 13.303</h4>
+          <p class="mt-1">
+            O sistema articulado de envidraçamento de ambientes é projetado para proporcionar proteção contra intempéries, vento, poeira e atenuação acústica em conformidade com a <strong>ABNT NBR 16259/2014</strong>. Conforme ressalva técnica regulamentar, sistemas articulados de sacada não constituem fachada-cortina hermética integral, preservando as folgas funcionais de dilatação e a ventilação permanente obrigatória (NBR 13.303 via aletas VZ 060-P064) indispensáveis para a segurança de ambientes residenciais com circulação de gás.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-white text-sm sm:text-base">5. Segurança da Informação</h4>
+          <p class="mt-1">
+            Adotamos medidas técnicas de segurança, incluindo certificados TLS/HTTPS obrigatórios, cabeçalhos HTTP estritos contra ataques (CSP, HSTS, X-Frame-Options: DENY) e sanitização de dados no lado do cliente.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex justify-end">
+        <button type="button" onclick="closeLgpdModal()" class="bg-murano-cyan text-murano-dark font-heading font-bold text-xs sm:text-sm px-6 py-2.5 rounded-full hover:bg-cyan-300 transition-colors">
+          Entendido e Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ OFICIAL COM DADOS 100% VERIFICADOS (CNPJ + E-MAIL + ENDEREÇO) -->
+  <footer class="bg-murano-navy/95 border-t border-white/10 pt-14 pb-24 md:pb-10 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
       <div class="flex items-center gap-4">
-        <img src="assets/images/logo-murano-oficial.png" alt="Logo Murano Vidraçaria" class="w-12 h-12 rounded-xl border border-murano-cyan/30">
+        <img src="assets/images/logo-murano-oficial.png" alt="Logo Murano Vidraçaria" class="w-12 h-12 rounded-xl border border-murano-cyan/40">
         <div>
-          <div class="font-heading font-bold text-white text-lg">MURANO VIDRAÇARIA</div>
-          <div class="text-xs text-slate-400 font-mono">CNPJ: 64.581.884/0001-72</div>
+          <div class="font-heading font-bold text-white text-lg">MURANO VIDRAÇARIA SOROCABA LTDA</div>
+          <div class="text-xs text-slate-400 font-mono">CNPJ: 64.581.884/0001-72 · Responsável: Caroline Oliveira</div>
         </div>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center gap-6 text-sm text-slate-300">
         <a href="https://wa.me/5515991598438" target="_blank" rel="noopener noreferrer" class="hover:text-murano-cyan transition-colors flex items-center gap-2">
-          <span class="text-murano-cyan font-bold">WhatsApp:</span> (15) 99159-8438
+          <span class="text-murano-cyan font-bold font-mono">WhatsApp:</span> (15) 99159-8438
+        </a>
+        <a href="mailto:muranovidracaria@gmail.com" class="hover:text-murano-cyan transition-colors flex items-center gap-2">
+          <span class="text-murano-cyan font-bold font-mono">E-mail:</span> muranovidracaria@gmail.com
         </a>
         <a href="https://www.instagram.com/muranovidros2/" target="_blank" rel="noopener noreferrer" class="hover:text-murano-cyan transition-colors flex items-center gap-2">
-          <span class="text-murano-cyan font-bold">Instagram:</span> @muranovidros2
+          <span class="text-murano-cyan font-bold font-mono">Instagram:</span> @muranovidros2
         </a>
       </div>
     </div>
 
     <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-      <p>📍 R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174</p>
-      <p>© 2026 Murano Vidraçaria · Todos os direitos reservados.</p>
+      <p>📍 R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174 · Atendimento Sorocaba e Região</p>
+      <div class="flex items-center gap-4">
+        <button type="button" onclick="openLgpdModal()" class="text-slate-400 hover:text-murano-cyan underline font-mono text-xs">
+          Política de Privacidade & LGPD
+        </button>
+        <span>•</span>
+        <a href="llms.txt" target="_blank" class="text-slate-400 hover:text-murano-cyan font-mono text-xs">
+          llms.txt (IA & GEO)
+        </a>
+        <span>•</span>
+        <p>© 2026 Murano Vidraçaria · Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
@@ -568,7 +1145,7 @@
     </a>
   </div>
 
-  <!-- SCRIPTS DE ANIMAÇÃO CRIATIVA: LENIS + GSAP + TILT 3D + SCROLLYTELLING + CONFIGURADOR -->
+  <!-- SCRIPTS DE INTERATIVIDADE: LENIS + GSAP + TILT + HYPERFRAMES BEFORE/AFTER + HOTSPOTS + CONFIGURADOR -->
   <script src="js/motion-scroll.js"></script>
   <script>
     // 1. Lenis Smooth Scroll integrado ao GSAP ScrollTrigger
@@ -632,19 +1209,173 @@
       document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
     };
 
-    // 5. Disparo do Configurador para o WhatsApp Oficial (15) 99159-8438
-    document.getElementById('configurador-form').addEventListener('submit', (e) => {
+    // 5. HYPERFRAMES: Comparador Antes/Depois (Before/After Slider)
+    const baRange = document.getElementById('ba-range');
+    const baContainer = document.getElementById('ba-container');
+    const baBeforeWrap = document.getElementById('ba-before-wrap');
+    const baDivider = document.getElementById('ba-divider');
+    const baHandle = document.getElementById('ba-handle');
+
+    const updateBASlider = (val) => {
+      const pct = Math.max(0, Math.min(100, val));
+      baContainer.style.setProperty('--slider-pos', `${pct}%`);
+      baBeforeWrap.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      baDivider.style.left = `${pct}%`;
+      baHandle.style.left = `${pct}%`;
+    };
+
+    if (baRange) {
+      baRange.addEventListener('input', (e) => {
+        updateBASlider(e.target.value);
+      });
+      updateBASlider(50);
+    }
+
+    // 6. HYPERFRAMES: 4 Hotspots Técnicos Interativos
+    const HOTSPOTS_DATA = {
+      1: {
+        badge: '01',
+        cat: 'Perfil Estrutural',
+        norma: 'ABNT NBR 16259/14',
+        title: 'Trilho Superior Alumínio RAL 9005 & Vedação com Escovas 5x6',
+        desc: 'Perfil usinado em liga estrutural 6063-T6 com rasgo de 24mm e duplo leito de vedação por escovas de polipropileno hidrorrepelentes contra rajadas de vento e infiltração pluvial.'
+      },
+      2: {
+        badge: '02',
+        cat: 'Mecanismo de Deslize',
+        norma: 'Engenharia Sem Rolamentos',
+        title: 'Alojamento & Pivôs em Inox 304 com Entre-eixos de 30mm',
+        desc: 'Recolhimento articulado a 90° com guias autolubrificantes. Sem rolamentos que oxidam ou travam com o tempo, garantindo suavidade vitalícia e segurança contra quedas.'
+      },
+      3: {
+        badge: '03',
+        cat: 'Vidro de Segurança',
+        norma: 'ABNT NBR 16259/14 & NBR 14697',
+        title: 'Vidro Laminado Incolor 10mm (5+5) com PVB Estrutural',
+        desc: 'Duas lâminas de 5mm unidas por película polivinil butiral (PVB). Em caso de impacto severo, os fragmentos mantêm-se presos à película sem projetar cacos cortantes.'
+      },
+      4: {
+        badge: '04',
+        cat: 'Ventilação Técnica Permanente',
+        norma: 'ABNT NBR 13.303 (Obrigatória)',
+        title: 'Veneziana Técnica VZ 060-P064 com Aletas de 30mm',
+        desc: 'Perfil ventilado com espaçamento mínimo regulamentar de 30mm entre aletas. Permite exaustão contínua de gases e circulação segura de ar em varandas com aquecedor e churrasqueira.'
+      }
+    };
+
+    let currentHotspot = 1;
+
+    window.openHotspot = (id) => {
+      const data = HOTSPOTS_DATA[id];
+      if (!data) return;
+      currentHotspot = id;
+
+      document.querySelectorAll('.cad-hotspot-pin').forEach((pin) => {
+        pin.parentElement.classList.remove('active');
+      });
+      const activePin = document.getElementById(`pin-${id}`);
+      if (activePin) activePin.parentElement.classList.add('active');
+
+      document.getElementById('insp-badge').textContent = data.badge;
+      document.getElementById('insp-cat').textContent = data.cat;
+      document.getElementById('insp-norma').textContent = data.norma;
+      document.getElementById('insp-title').textContent = data.title;
+      document.getElementById('insp-desc').textContent = data.desc;
+    };
+
+    window.cycleHotspot = (direction) => {
+      let next = currentHotspot + direction;
+      if (next > 4) next = 1;
+      if (next < 1) next = 4;
+      openHotspot(next);
+    };
+
+    // 7. HYPERFRAMES: Alternador de Modo (Comparador vs Vídeo 3D)
+    window.switchHyperMode = (mode) => {
+      const modeCompare = document.getElementById('hyper-mode-compare');
+      const modeVideo = document.getElementById('hyper-mode-video');
+      const btnCompare = document.getElementById('tab-btn-compare');
+      const btnVideo = document.getElementById('tab-btn-video');
+
+      if (mode === 'compare') {
+        modeCompare.classList.remove('hidden');
+        modeVideo.classList.add('hidden');
+        btnCompare.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all bg-murano-cyan text-murano-dark shadow-[0_0_15px_rgba(43,217,224,0.4)]';
+        btnVideo.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-300 hover:text-white transition-all';
+      } else {
+        modeCompare.classList.add('hidden');
+        modeVideo.classList.remove('hidden');
+        modeVideo.classList.add('flex');
+        btnVideo.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all bg-murano-cyan text-murano-dark shadow-[0_0_15px_rgba(43,217,224,0.4)]';
+        btnCompare.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-300 hover:text-white transition-all';
+        ScrollTrigger.refresh();
+      }
+    };
+
+    // 8. Controle de Playback Manual do Vídeo 3D
+    let isVideoPlaying = false;
+    window.toggleVideoPlayback = () => {
+      const vid = document.getElementById('sacada-motion-video');
+      const icon = document.getElementById('play-btn-icon');
+      const text = document.getElementById('play-btn-text');
+      if (!vid) return;
+
+      if (isVideoPlaying) {
+        vid.pause();
+        isVideoPlaying = false;
+        icon.textContent = '▶';
+        text.textContent = 'Assistir Contínuo';
+      } else {
+        vid.play().then(() => {
+          isVideoPlaying = true;
+          icon.textContent = '⏸';
+          text.textContent = 'Pausar Vídeo';
+        }).catch(() => {});
+      }
+    };
+
+    // 9. Modal LGPD (Abrir / Fechar com suporte a ESC)
+    const modalLgpd = document.getElementById('modal-lgpd');
+    window.openLgpdModal = () => {
+      modalLgpd.classList.remove('hidden');
+      modalLgpd.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    window.closeLgpdModal = () => {
+      modalLgpd.classList.add('hidden');
+      modalLgpd.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+    modalLgpd.addEventListener('click', (e) => {
+      if (e.target === modalLgpd) closeLgpdModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modalLgpd.classList.contains('hidden')) {
+        closeLgpdModal();
+      }
+    });
+
+    // 10. Sanitização e Disparo do Formulário para WhatsApp Comercial
+    window.handleConfiguradorSubmit = (e) => {
       e.preventDefault();
+      const lgpdCheckbox = document.getElementById('cfg-lgpd');
+      if (!lgpdCheckbox || !lgpdCheckbox.checked) {
+        alert('Por favor, confirme a concordância com o envio dos dados conforme a LGPD.');
+        return;
+      }
+
       const selected = Array.from(document.querySelectorAll('.service-pill.active')).map(el => el.dataset.service);
       const servicosTexto = selected.length > 0 ? selected.join(', ') : 'Projeto em Vidro Sob Medida';
       const tipoImovel = document.getElementById('imovel-tipo').value;
-      const local = document.getElementById('imovel-local').value.trim() || 'Sorocaba/Região';
+      
+      // Sanitização estrita contra XSS/injeção
+      const rawLocal = document.getElementById('imovel-local').value;
+      const localSanitizado = rawLocal.replace(/[<>]/g, '').trim() || 'Sorocaba/Região';
 
-      const msg = `Olá Murano Vidraçaria! Vim pelo site e gostaria de solicitar um orçamento:\n\n• *Interesse:* ${servicosTexto}\n• *Tipo de Imóvel:* ${tipoImovel}\n• *Localização/Condomínio:* ${local}`;
+      const msg = `Olá Murano Vidraçaria! Vim pelo site e gostaria de solicitar um orçamento:\n\n• *Interesse:* ${servicosTexto}\n• *Tipo de Imóvel:* ${tipoImovel}\n• *Localização/Condomínio:* ${localSanitizado}\n• *Conformidade:* ABNT NBR 16259 / LGPD Aceita`;
       const url = `https://wa.me/5515991598438?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
-    });
+    };
   </script>
 </body>
 </html>
-

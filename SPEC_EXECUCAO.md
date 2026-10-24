@@ -1,69 +1,128 @@
-# 🎯 SPEC DE EXECUÇÃO CIRÚRGICA V2: DEPLOY VERCEL + PIPELINE HÍBRIDO CAD 3D (PERFIS REAIS) & KEYFRAMES IA GENERATIVA
+# SPEC_EXECUCAO.md — Murano Vidraçaria (V3: Design Taste Frontend + HyperFrames + Blindagem SEO/GEO/Security/LGPD)
 
-> **PROTOCOLO MULTI-MODELO ATIVO:**
-> Planejado pelo **Modelo Forte (Arquiteto)** para execução imediata pelo **Modelo Rápido/Barato (Gemini Flash)** com a skill `superpowers` ativa.
-
----
-
-## 🛡️ REGRAS INVIOLÁVEIS PARA O MODELO EXECUTOR
-1. **Ative a skill `superpowers`** antes de iniciar.
-2. **PROIBIDO OMITIR CÓDIGO:** Nunca use `// resto do código` ou placeholders incompletos.
-3. **ZERO ALUCINAÇÃO:** Mantenha todos os dados verificados da Murano Vidraçaria (`(15) 99159-8438`, `@muranovidros2`, CNPJ `64.581.884/0001-72`, `R. Cervantes, 237 - Vila Assis, Sorocaba - SP`).
-4. **FIDELIDADE ESTRITA À PRANCHA TÉCNICA (`MURANO_3D_TECHNICAL_CONTEXT.md` + Prancha Oficial):**
-   - Vão do sistema: `1900 mm` (L) × `860 mm` (A).
-   - Veneziana fixa à direita: `150 mm` × `860 mm` (Perfil `VZ 060-P064` com aletas ventiladas reais a cada `30 mm`).
-   - Folhas móveis: `4 folhas` de `427.75 mm` × `660 mm`, vidro **Laminado Incolor 10 mm (5+5)** (transparente cristalino real, NÃO colorido de ciano neon).
-   - Perfis de alumínio: **Preto Fosco RAL 9005**, com canal/rasgo em **U** real nos trilhos superior/inferior, escovas de vedação `5x6`, perfis leito e pinos/pivôs cilíndricos de inox/latão a `30 mm` da borda.
-   - Guarda-Corpo Inferior (`GC-VARANDA`): `1930 mm` de largura total com 3 módulos de `610 mm` (`V1 | V2 | V1`) e vidro laminado incolor 8mm abaixo da mureta/corrimão.
+> **PROTOCOLO DE ROTEAMENTO (`model-router`):**
+> - **Arquiteto (Planejador):** Gemini 4 Argon (Concluído — decisões travadas via `/grill-me`).
+> - **Executor Recomendado:** **Gemini Flash** (ou modelo rápido equivalente) com a skill `superpowers` ativada.
+> - **Regra de Ouro (`superpowers`):** É **TERMINANTEMENTE PROIBIDO** usar `// resto do código`, `<!-- ... -->` ou omitir blocos. Preserve 100% da codificação UTF-8 (acentuação perfeita em português) e sincronize tanto `lp/index.html` quanto `index.html` na raiz do repositório.
 
 ---
 
-## 🚀 TAREFA 1: Promover Nova LP para a Raiz (`index.html`) e Atualizar Vercel (Git Push)
-
-A Vercel serve o arquivo `index.html` da raiz do repositório (`https://github.com/KThomio/muranovidracaria.git`).
-1. Copie todo o conteúdo de `clients/murano-vidracaria/lp/index.html` para `clients/murano-vidracaria/index.html` ajustando os caminhos relativos:
-   - Substitua `../assets/` por `assets/`
-   - Substitua `../js/motion-scroll.js` por `js/motion-scroll.js`
-2. Mantenha `lp/index.html` sincronizado para referência modular do pacote.
-3. Certifique-se de que o `.gitignore` de `clients/murano-vidracaria/` **NÃO bloqueie** `assets/images/*` nem `assets/videos/preview_animacao.mp4` (pois a Vercel precisa desses arquivos no repositório Git para exibi-los no site publicado!), bloqueando apenas arquivos `.blend`, `.blend1`, `__pycache__` e `node_modules`.
-
----
-
-## 🏗️ TAREFA 2: Modelagem CAD de Precisão dos Perfis Reais + Keyframes 1080p p/ IA Generativa (`blender_pipeline/`)
-
-Reescreva `blender_pipeline/build_scene_v2.py` e `blender_pipeline/render_fast_preview.py` para abandonar os "cubos lisos genéricos" e construir a geometria técnica real em **Full HD (`1920x1080`)**:
-
-### 2.1. Geometria Real dos Perfis e Componentes em `build_scene_v2.py`
-1. **Trilhos Superior e Inferior em Perfil "U" Usinado (`TRILHO_INF` e `TRILHO_SUP`):**
-   - Em vez de um cubo maciço cego, construa o trilho (`1900mm` comp × `45mm` prof × `60mm` alt) composto por base + 2 abas laterais formantando o **canal interno em U** de `24mm` de abertura onde o perfil leito corre, mais 2 frisos de **Escova de Vedação 5x6** na borda interna.
-   - No lado esquerdo (`x = 15mm .. 160mm`), modele a abertura visual do **Alojamento/Rasgo de Saída** e os **4 Pivôs/Discos de Estacionamento** cilíndricos em latão/inox (`radius = 6mm`, espaçados de `30mm` eixo a eixo a partir de `x = 30mm`).
-2. **Perfis Leito (`FOLHA_XX_LEITO_SUP` e `INF`) + Pinos de Giro:**
-   - Perfil que abraça a base e o topo do vidro de `10mm`, com chanfro chanfrado (`Bevel 1.5mm`) e pino pivô cilíndrico visível a `30mm` da extremidade esquerda de cada folha.
-3. **Veneziana Fixa `VZ 060-P064` com Aletas 3D Reais (`VENEZIANA_REF`):**
-   - Na posição `x = 1900mm - 75mm` (`150mm` de largura), substitua o cubo liso por molduras laterais de alumínio + **aletas horizontais 3D reais** inclinadas a `35°` a cada `30mm` de altura (respeitando a ventilação permanente da Norma NBR 13.303 descrita na prancha!).
-4. **Contexto Arquitetônico Realista da Varanda (em 3D real, sem foto 2D torta):**
-   - Modele o vão real da varanda em alvenaria arquitetônica texturizada (`Paredes Laterais`, `Viga Superior`, `Mureta Central` sob o trilho inferior) e, abaixo da mureta, o **Guarda-Corpo `GC-VARANDA`** com os 3 módulos de `610mm` (`V1 | V2 | V1`) em perfil preto e vidro laminado incolor.
-   - No fundo externo (através do vidro), crie uma iluminação de céu diurno/entardecer suave (`Nishita Sky / HDRI Procedural Suave`) para que o **Vidro Laminado Incolor 5+5 (`IOR 1.52`, `Roughness 0.005`, `Base Color (0.97, 0.99, 0.98)`)** seja **100% transparente e cristalino**, com reflexo natural de vidro de verdade e apenas a lapidação da borda de `10mm` levemente esverdeada como vidro real.
-
-### 2.2. Geração dos 3 Keyframes Master em 1080p (Cycles Raytracing) + Vídeo 1080p
-Atualize `blender_pipeline/render_fast_preview.py` para:
-- Resolução Full HD `1920x1080`.
-- Quando chamado com `--keyframes`, renderizar no motor **CYCLES** (`samples = 64` + Denoising) e salvar na pasta `clients/murano-vidracaria/motion/keyframes_ia/`:
-  1. `keyframe_01_fechado.png` (Frame 1: As 4 folhas alinhadas fechando o vão + veneziana fixa à direita).
-  2. `keyframe_02_deslizando_giro.png` (Frame 110: Folha 01 aberta a 90° no alojamento esquerdo, Folha 02 iniciando giro no pivô e Folhas 03/04 deslizando no trilho U).
-  3. `keyframe_03_aberto_total.png` (Frame 240: Todas as 4 folhas recolhidas e empilhadas a 90° à esquerda com espaçamento de 30mm eixo a eixo + vão livre).
-- Em seguida, renderizar a animação completa `assets/videos/preview_animacao.mp4` (240 frames, `gopsize = 1`, H.264) para que o site na Vercel já exiba a nova cena 3D realista imediatamente!
-
-### 2.3. Criar o Guia Prático de Geração no Kling AI / Runway (`motion/GUIA_IA_GENERATIVA_VIDEO.md`)
-Crie o arquivo `clients/murano-vidracaria/motion/GUIA_IA_GENERATIVA_VIDEO.md` contendo:
-- O passo a passo exato de como subir `keyframe_01_fechado.png` como **Start Frame** e `keyframe_02_deslizando_giro.png` / `keyframe_03_aberto_total.png` como **End Frame** no **Kling AI 1.6 (Modo Pro - First/Last Frame)** ou **Runway Gen-3 Alpha**.
-- Os prompts técnicos em inglês (otimizados para arquitetura fotorrealista 8K) que preservam a geometria dos perfis pretos RAL 9005 e a transparência do vidro laminado.
-- O comando FFmpeg pronto de 1 linha para quando o Diretor baixar o MP4 do Kling/Runway converter para All-Intra (`-g 1`) e substituir `assets/videos/preview_animacao.mp4`.
+## 1. Contexto & Dados Reais Verificados (Zero Hallucination)
+- **Razão Social (Controladora LGPD):** `Murano Vidraçaria Sorocaba Ltda`
+- **Nome Fantasia:** `Murano Vidraçaria`
+- **CNPJ:** `64.581.884/0001-72`
+- **Responsável / Contato Oficial:** `Caroline Oliveira`
+- **E-mail Oficial:** `muranovidracaria@gmail.com`
+- **WhatsApp Oficial:** `(15) 99159-8438` (Link: `https://wa.me/5515991598438`)
+- **Instagram Oficial:** `@muranovidros2` (`https://www.instagram.com/muranovidros2/`)
+- **Endereço Físico:** `R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174`
+- **Avaliação Google:** `4.9 / 5.0` (`34 avaliações verificadas`)
+- **Normas Técnicas Verificadas (Ficha Técnica Real):**
+  - **ABNT NBR 16259/2014:** Sistema de envidraçamento articulado de ambientes (proteção contra intempéries, vento, chuva e ruído; nota técnica legal: sistemas articulados de sacada destinam-se à proteção e conforto térmico/acústico, não assegurando estanqueidade hermética total de fachada cortina).
+  - **ABNT NBR 13.303:** Ventilação permanente obrigatória via Veneziana `VZ 060-P064` (espaçamento mínimo de 30mm para exaustão de gases e circulação contínua de ar).
 
 ---
 
-## ✅ TAREFA 3: Execução, QA, Commit & Push para a Vercel
-1. Rode o build e o QA do Blender (`build_scene_v2.py` e `run_qa_scene_v2.py`).
-2. Rode o render dos 3 keyframes Cycles 1080p (`--keyframes`) e o render do vídeo `preview_animacao.mp4`.
-3. No diretório `clients/murano-vidracaria`, execute `git add`, `git commit` e `git push origin main` para publicar a atualização na Vercel.
-4. Atualize o `STATE.md` (< 40 linhas).
+## 2. Tarefa 1 — Design Taste Frontend (`design-taste-frontend`) em `lp/index.html` e `index.html`
+Elevar a estética de toda a Landing Page para padrão de **Estúdio de Arquitetura / Boutique High-Ticket (Zero Cara de IA)**:
+1. **Textura Óptica SVG Film Grain:**
+   - Adicionar um overlay fixo (`position: fixed; inset: 0; pointer-events: none; z-index: 45; opacity: 0.028;`) com filtro `<svg>` fractalNoise sutil para eliminar o aspecto chapado digital em fundos escuros (`#030914`).
+2. **Bordas Hairline Especulares & Crosshairs de Engenharia (`+`):**
+   - Criar classes utilitárias `.cad-crosshair` que posicionam pequenos marcadores técnicos `+` (`#1CC8D8` com `opacity: 0.45`) nos cantos dos cards principais e do palco 3D.
+3. **Indexação Editorial Numerada (Swiss Grid):**
+   - Atualizar os cabeçalhos de seção com numeração técnica em `JetBrains Mono`:
+     - `[ 01 // PORTFÓLIO DE ESPECIALIDADES ]` na seção `#solucoes`
+     - `[ 02 // HYPERFRAMES 3D & ENGENHARIA CAD ]` na seção `#tecnologia`
+     - `[ 03 // OBRAS REAIS EXECUTADAS ]` na seção `#obras-reais`
+     - `[ 04 // NORMAS ABNT & PERGUNTAS FREQUENTES ]` na nova seção `#faq`
+     - `[ 05 // CONFIGURADOR TÉCNICO 15S ]` na seção `#orcamento`
+4. **Rigor Técnico ABNT nos Textos:**
+   - Garantir que todas as menções ao envidraçamento de sacada citem a conformidade com a **ABNT NBR 16259/14** e a ventilação permanente **ABNT NBR 13.303 (`VZ 060-P064`)**, sem prometer "estanqueidade 100% hermética", usando sempre *"vedação técnica contra vento, chuva e poeira conforme ABNT NBR 16259/14"*.
+
+---
+
+## 3. Tarefa 2 — HyperFrames Interactive Keyframe Studio (`hyperframes`) na Seção `#tecnologia`
+Transformar a seção `#tecnologia` em uma vitrine interativa dupla (**HyperFrames Studio**), permitindo ao visitante alternar instantaneamente entre **2 Modos de Visualização** através de uma barra seletora elegante no topo do player:
+1. **Modo 1 (Padrão Interativo Instantâneo): `Comparador Antes/Depois + Hotspots CAD`**
+   - **Slider Comparador Before/After:**
+     - Imagem Base (Fundo / Direita): `motion/keyframes_ia/keyframe_03_aberto_total.png` (legenda: `ABERTURA TOTAL 90° — RECOLHIDO NO ALOJAMENTO`).
+     - Imagem Sobreposta (Recorte variável `clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0)`): `motion/keyframes_ia/keyframe_01_fechado.png` (legenda: `SACADA FECHADA — PROTEÇÃO ABNT NBR 16259`).
+     - Controle deslizante (`<input type="range" min="0" max="100" value="50">` + linha divisória vertical `#1CC8D8` com botão central `< >`) 100% responsivo no touch mobile (375px) e mouse desktop.
+   - **4 Hotspots Técnicos Clicáveis sobre o Quadro:**
+     - **Hotspot `[01]` (Topo Esquerdo - `top: 18%; left: 28%`):** *Trilho Superior Alumínio RAL 9005* — Usinado com rasgo central de 24mm e escovas de vedação 5x6 embutidas.
+     - **Hotspot `[02]` (Topo Direito - `top: 22%; left: 74%`):** *Alojamento & Pivôs Inox 30mm* — Recolhimento articulado de 6 folhas a 90° sem rolamentos que travam.
+     - **Hotspot `[03]` (Centro - `top: 48%; left: 52%`):** *Vidro Laminado Incolor 10mm (5+5)* — Segurança estrutural superior e conforto termoacústico.
+     - **Hotspot `[04]` (Direita - `top: 42%; left: 84%`):** *Veneziana Técnica VZ 060-P064* — Aletas 3D com passo de 30mm para ventilação permanente (Norma ABNT NBR 13.303).
+     - Ao clicar/tocar em qualquer hotspot, exibe um card de inspeção CAD logo abaixo ou sobreposto com os dados exatos da peça.
+2. **Modo 2: `Vídeo Scrollytelling 3D (240 Frames)`**
+   - Exibe o player `<video id="scrolly-video" src="assets/videos/preview_animacao.mp4">` controlado pelo scroll (GSAP ScrollTrigger) + botão Play/Pause manual para quem quiser assistir à cinemática contínua das 6 folhas deslizando e girando.
+
+---
+
+## 4. Tarefa 3 — Blindagem Total: Security (`vercel.json`), SEO (`sitemap.xml`, `robots.txt`), GEO (`llms.txt`, JSON-LD) e LGPD (`geo-lgpd-shield`)
+
+### 4.1. Segurança Web Anti-Hacking (`clients/murano-vidracaria/vercel.json`)
+Criar o arquivo `clients/murano-vidracaria/vercel.json` com cabeçalhos HTTP de nível bancário/empresarial (compatíveis com Tailwind CDN, Google Fonts, GSAP e Lenis):
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self' data: blob:; connect-src 'self' https://wa.me;"
+        }
+      ]
+    }
+  ]
+}
+```
+- Além disso, no JavaScript do formulário `#configurador-form`, sanitizar todos os inputs de texto (`.replace(/[<>]/g, '').trim()`) antes de montar a URL do WhatsApp.
+
+### 4.2. GEO (`clients/murano-vidracaria/llms.txt`) — Otimização para Motores de IA
+Criar `clients/murano-vidracaria/llms.txt` em Markdown estruturado para que ChatGPT Search, Perplexity, Claude e Google Gemini recomendem a **Murano Vidraçaria** como a referência número 1 em Sorocaba/SP:
+- Incluir Razão Social, CNPJ `64.581.884/0001-72`, Endereço (`R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174`), WhatsApp `(15) 99159-8438`, E-mail `muranovidracaria@gmail.com`, Avaliação `4.9/5 (34 avaliações)`, Catálogo Completo de Especialidades, Diferenciais de Engenharia (Sistema Encapsulado Sem Rolamentos, ABNT NBR 16259/14 e NBR 13.303) e Perguntas Frequentes.
+
+### 4.3. SEO Técnico (`robots.txt`, `sitemap.xml` e Schema.org JSON-LD)
+1. Criar `clients/murano-vidracaria/robots.txt` liberando explicitamente `User-agent: *`, `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot` e `Google-Extended`, apontando para `Sitemap: https://muranovidracaria.vercel.app/sitemap.xml`.
+2. Criar `clients/murano-vidracaria/sitemap.xml` listando `https://muranovidracaria.vercel.app/` e `https://muranovidracaria.vercel.app/llms.txt`.
+3. Injetar no `<head>` do `index.html` e `lp/index.html`:
+   - Meta tags completas (`description`, `robots`, `canonical`, `theme-color`, OpenGraph `og:*` e Twitter Cards).
+   - Bloco `<script type="application/ld+json">` contendo `@graph` com:
+     - `HomeAndConstructionBusiness` / `LocalBusiness` completo (CNPJ `64.581.884/0001-72`, endereço em Sorocaba, coordenadas aproximadas de Vila Assis Sorocaba `-23.5062, -47.4398`, telefone `+55-15-99159-8438`, email `muranovidracaria@gmail.com`, `aggregateRating` `4.9` / `34`).
+     - `FAQPage` com as 5 perguntas e respostas estratégicas da seção `#faq`.
+
+### 4.4. Nova Seção `#faq` (Perguntas Frequentes & Normas ABNT)
+Adicionar entre `#obras-reais` e `#orcamento` uma seção de **Perguntas Frequentes (`#faq`)** com 5 acordeões (`<details class="group ...">`) elegantes:
+1. *Qual a diferença do Sistema Encapsulado Sem Rolamentos para o sistema tradicional com roldanas?*
+2. *Quais normas da ABNT garantem a segurança do envidraçamento de sacada da Murano?* (Citando ABNT NBR 16259/2014, vidro laminado 5+5 e ventilação permanente ABNT NBR 13.303 via veneziana VZ 060-P064).
+3. *A Murano realiza apenas envidraçamento de sacadas ou atende obras completas em vidro?* (Destacando Coberturas/Pergolados, Guarda-Corpos Inox/Alumínio, Esquadrias de Alto Padrão, Box e Espelhos).
+4. *Por que ter Produção Própria faz diferença no prazo e no acabamento?*
+5. *Quais cidades e condomínios a Murano Vidraçaria atende?* (Sorocaba, Votorantim, Itu, Porto Feliz, Boituva, Araçoiaba da Serra e condomínios de alto padrão da região).
+
+### 4.5. Conformidade Legal LGPD (Lei Federal nº 13.709/2018) — Risco Zero de Processo
+1. **Checkbox de Consentimento Expresso no `#configurador-form`:**
+   - Antes do botão de envio para o WhatsApp, adicionar um `<label>` com `<input type="checkbox" id="cfg-lgpd" required>` com o texto:
+     *"Concordo em enviar os dados informados diretamente para o WhatsApp comercial da Murano Vidraçaria Sorocaba Ltda (CNPJ 64.581.884/0001-72) exclusivamente para elaboração de orçamento, conforme a Política de Privacidade e LGPD (nenhum dado é salvo em banco de dados neste site)."*
+2. **Modal Completo de Política de Privacidade, Termos Técnicos e LGPD (`#modal-lgpd`):**
+   - Criar um modal acessível pelo link no formulário e pelo rodapé (`Política de Privacidade & LGPD`), detalhando:
+     - **Controladora dos Dados:** `Murano Vidraçaria Sorocaba Ltda`, inscrita no CNPJ sob o nº `64.581.884/0001-72`, com sede na `R. Cervantes, 237 - Vila Assis, Sorocaba - SP, CEP 18025-174`.
+     - **Canal do Encarregado (DPO / Atendimento de Privacidade):** `muranovidracaria@gmail.com` | WhatsApp `(15) 99159-8438` (A/C Caroline Oliveira).
+     - **Arquitetura Zero-Storage (Processamento Client-Side):** Explicação clara de que o site não utiliza cookies de rastreamento invasivos nem armazena dados pessoais em servidores ou bancos de dados ocultos; o configurador apenas formata a mensagem localmente no navegador do próprio usuário e redireciona para o aplicativo oficial WhatsApp (`wa.me`) mediante ação voluntária.
+     - **Direitos do Titular (Art. 18 da LGPD):** Confirmação, acesso, correção ou eliminação do histórico de conversa diretamente pelo canal oficial de atendimento.
+     - **Nota Técnica de Engenharia (ABNT NBR 16259/2014 e NBR 13.303):** Esclarecimento técnico oficial sobre o sistema de envidraçamento articulado de ambientes.
+
+---
+
+## 5. Tarefa 4 — Auditoria Autônoma (`agent-browser` + `superpowers`) & Deploy Git/Vercel
+1. Garantir que `lp/index.html` e `index.html` (na raiz de `clients/murano-vidracaria/`) sejam **100% idênticos** e salvos em UTF-8 sem BOM corrompido.
+2. Copiar também as imagens de `motion/keyframes_ia/` para `assets/images/keyframes/` (ou garantir que os caminhos relativos `motion/keyframes_ia/keyframe_01_fechado.png` e `motion/keyframes_ia/keyframe_03_aberto_total.png` estejam versionados no Git e funcionem perfeitamente na Vercel).
+3. Executar verificação de integridade dos arquivos (`index.html`, `lp/index.html`, `vercel.json`, `llms.txt`, `robots.txt`, `sitemap.xml`) e testar responsividade e ausência de erros JS.
+4. Atualizar `clients/murano-vidracaria/STATE.md` (< 40 linhas).
+5. Fazer commit e push em `clients/murano-vidracaria` para `origin main` (`https://github.com/KThomio/muranovidracaria.git`) para atualizar imediatamente a Vercel em produção.

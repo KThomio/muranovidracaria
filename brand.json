@@ -1,8 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "client_name": "Murano Vidraçaria",
-  "legal_name": "Murano Vidraçaria",
+  "legal_name": "Murano Vidraçaria Sorocaba Ltda",
   "cnpj": "64.581.884/0001-72",
+  "contact_person": "Caroline Oliveira",
+  "email": "muranovidracaria@gmail.com",
   "tagline": "Especialistas em Envidraçamento de Sacadas e Soluções em Vidro de Alto Padrão",
   "segment": "Vidraçaria de Alto Padrão (Envidraçamento de Sacadas, Coberturas, Guarda-Corpo, Box, Portas, Janelas e Espelhos)",
   "location": "R. Cervantes, 237 - Vila Assis, Sorocaba - SP, 18025-174",
@@ -11,8 +13,8 @@
     {
       "id": "sacadas",
       "name": "Envidraçamento de Sacadas & Varandas",
-      "highlight": "Carro-chefe · Norma ABNT NBR 16259/14",
-      "description": "Fechamento panorâmico de varandas com abertura total das folhas, vedação hermética e opção de sistema deslize e giro sem rolamentos."
+      "highlight": "Carro-chefe · Norma ABNT NBR 16259/14 & NBR 13.303",
+      "description": "Fechamento panorâmico de varandas com abertura total das folhas a 90°, proteção técnica contra intempéries e sistema encapsulado sem rolamentos."
     },
     {
       "id": "coberturas",

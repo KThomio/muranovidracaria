@@ -55,3 +55,4 @@ ffmpeg -i video_do_kling.mp4 -vcodec libx264 -crf 18 -preset slow -g 1 -an clien
 ```
 
 Assim que substituir o arquivo `preview_animacao.mp4`, dê um `git push` e a sua Vercel exibirá o vídeo gerado por IA no ar imediatamente!
+
